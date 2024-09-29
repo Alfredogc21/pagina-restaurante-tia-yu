@@ -44,6 +44,7 @@
                         <li><a href="#galeria">Galeria</a></li>
                         <li><a href="registro_cliente.php">Reservas</a></li>
                         <li><a href="#contactos">Contacto</a></li>
+                        <li><a href="../login.php">Login</a></li>
                     </ul>
                 </nav>
             </div>
