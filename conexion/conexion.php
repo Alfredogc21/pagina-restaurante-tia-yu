@@ -2,7 +2,7 @@
 
     //Hacemos la conexion a la base de datos
     try {
-        $conexion = new PDO('mysql:host=localhost;dbname=educasen', 'root', '');
+        $conexion = new PDO('mysql:host=localhost;dbname=restaurante', 'root', '');
         $conexion->exec("SET CHARACTER SET utf8");
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
