@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2024 a las 16:42:02
+-- Tiempo de generación: 30-09-2024 a las 09:23:31
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -20,25 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `restaurante`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `cliente`
---
-
-CREATE TABLE `cliente` (
-  `IdCliente` int(11) NOT NULL,
-  `Cedula` varchar(45) NOT NULL,
-  `P_Nombre` char(60) NOT NULL,
-  `S_Nombre` char(60) NOT NULL,
-  `P_Apellidos` char(60) NOT NULL,
-  `S_Apellido` char(60) NOT NULL,
-  `id_roles` int(11) NOT NULL,
-  `Telefono` varchar(45) NOT NULL,
-  `Correo_Electronico` varchar(45) NOT NULL,
-  `Contraseña` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -90,13 +71,29 @@ INSERT INTO `roles` (`id_roles`, `roles`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `usuario` (
-  `idUsuario` varchar(45) NOT NULL,
-  `Contraseña` varchar(45) NOT NULL
+CREATE TABLE `usuarios` (
+  `IdCliente` int(11) NOT NULL,
+  `Cedula` varchar(20) NOT NULL,
+  `P_Nombre` char(60) NOT NULL,
+  `S_Nombre` char(60) NOT NULL,
+  `P_Apellidos` char(60) NOT NULL,
+  `S_Apellido` char(60) NOT NULL,
+  `id_roles` int(11) NOT NULL,
+  `Telefono` varchar(45) NOT NULL,
+  `Correo_Electronico` varchar(45) NOT NULL,
+  `Contrasena` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`IdCliente`, `Cedula`, `P_Nombre`, `S_Nombre`, `P_Apellidos`, `S_Apellido`, `id_roles`, `Telefono`, `Correo_Electronico`, `Contrasena`) VALUES
+(3, '1109264', 'ALFREDO', '', 'GOMEZ', 'CULMA', 1, '3138110233', 'ALFREDO@GMAIL.COM', '12345678'),
+(4, '1109264', 'CARLOS', 'ANDRES', 'ORTIZ', 'CAJICA', 2, '3107534365', 'KRLOS@GMAIL.COM', '1109264713');
 
 -- --------------------------------------------------------
 
@@ -114,16 +111,6 @@ CREATE TABLE `valoracion` (
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`IdCliente`),
-  ADD UNIQUE KEY `id_roles` (`id_roles`),
-  ADD UNIQUE KEY `Cedula` (`Cedula`),
-  ADD UNIQUE KEY `Correo_Electronico_2` (`Correo_Electronico`),
-  ADD KEY `Correo_Electronico` (`Correo_Electronico`);
 
 --
 -- Indices de la tabla `mesa`
@@ -146,10 +133,13 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id_roles`);
 
 --
--- Indices de la tabla `usuario`
+-- Indices de la tabla `usuarios`
 --
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idUsuario`);
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`IdCliente`),
+  ADD UNIQUE KEY `id_roles` (`id_roles`),
+  ADD UNIQUE KEY `Correo_Electronico_2` (`Correo_Electronico`),
+  ADD KEY `Correo_Electronico` (`Correo_Electronico`);
 
 --
 -- Indices de la tabla `valoracion`
@@ -161,12 +151,6 @@ ALTER TABLE `valoracion`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `IdCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `mesa`
@@ -187,6 +171,12 @@ ALTER TABLE `roles`
   MODIFY `id_roles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `IdCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
@@ -197,19 +187,17 @@ ALTER TABLE `valoracion`
 --
 
 --
--- Filtros para la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`id_roles`) REFERENCES `roles` (`id_roles`),
-  ADD CONSTRAINT `cliente_ibfk_2` FOREIGN KEY (`Correo_Electronico`) REFERENCES `usuario` (`idUsuario`),
-  ADD CONSTRAINT `cliente_ibfk_3` FOREIGN KEY (`Cedula`) REFERENCES `usuario` (`idUsuario`);
-
---
 -- Filtros para la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`IdCliente`),
+  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `usuarios` (`IdCliente`),
   ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`Idmesa`) REFERENCES `mesa` (`idMesa`);
+
+--
+-- Filtros para la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_roles`) REFERENCES `roles` (`id_roles`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
