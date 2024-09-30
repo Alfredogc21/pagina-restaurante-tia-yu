@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante las Delicias de la Tía Yú</title>
-    <link rel="shortcut icon" href="iconos/logo_1.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="views/iconos/logo_1.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/9836403ffa.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Estilos/style.css">
-    <link rel="stylesheet" href="Estilos/login.css">
-    <link rel="stylesheet" href="Estilos/singup.css">
+    <link rel="stylesheet" href="views/Estilos/style.css">
+    <link rel="stylesheet" href="views/Estilos/login.css">
+    <link rel="stylesheet" href="views/Estilos/singup.css">
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -19,7 +19,7 @@
     <header>
         <div class="header__superior">
             <div class="logo">
-                <img src="iconos/LAS DELICIAS.png" alt="">
+                <img src="views/iconos/LAS DELICIAS.png" alt="">
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                         <li><a href="#galeria">Galeria</a></li>
                         <li><a href="registro_cliente.php">Reservas</a></li>
                         <li><a href="#contactos">Contacto</a></li>
-                        <li><a href="../login.php">Login</a></li>
+                        <li><a href="login.php">Login</a></li>
                     </ul>
                 </nav>
     </header>
@@ -61,7 +61,7 @@
 
             <input class="buttons" type="submit" name="" value="Registrarse">
             <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
-            <p><a href="../login.php">Ingresar</a></p>
+            <p><a href="login.php">Ingresar</a></p>
         </form>
 
     </main>
@@ -71,7 +71,7 @@
         <div class="container_footer_all">
             <div class="container_body">
                 <div class="columna">
-                    <img src="iconos/LAS DELICIAS.png">
+                    <img src="views/iconos/LAS DELICIAS.png">
 
                     <h2>Horario de Atención</h2>
                     <p>Lunes a Viernes</p>
@@ -84,26 +84,26 @@
                     <h2>Información de Contacto</h2>
                     <div class=row2>
                         <a href="https://goo.gl/maps/R2zp29zb5QXfWvY59" target="_blank">
-                            <img src="iconos/icons8-edificio-de-restaurante-50.png">
+                            <img src="views/iconos/icons8-edificio-de-restaurante-50.png">
                             <label>Mz B Casa 28 Barrio El Futuro Espinal, Tolima.
                             </label>
                         </a>
                     </div>
                     <div class=row2>
                         <a href="https://api.whatsapp.com/send?phone=573214172645&text=¿Cuál es el Menú para el Día de Hoy?" target="_blank">
-                            <img src="iconos/whatsapp30.png" href="">
+                            <img src="views/iconos/whatsapp30.png" href="">
                             <label>3214172645</label>
                         </a>
                     </div>
                     <div class=row2>
                         <a href="tel:573178338178">
-                            <img src="iconos/icons8-teléfono-desconectado-50.png">
+                            <img src="views/iconos/icons8-teléfono-desconectado-50.png">
                             <label>3178338178</label>
                         </a>
                     </div>
                     <div class=row2>
                         <a href="mailto:lasdeliciasdelatiayu@gmail.com" target="_blank">
-                            <img src="iconos/msj.png">
+                            <img src="views/iconos/msj.png">
                             <label>lasdeliciasdelatiayu@gmail.com</label>
                         </a>
                     </div>
@@ -112,13 +112,13 @@
                     <h2>Nuestras Redes Sociales</h2>
                     <div class=row>
                         <a href="https://www.facebook.com/profile.php?id=100087026563677" target="_blank">
-                            <img src="iconos/facebook50.png">
+                            <img src="views/iconos/facebook50.png">
                         </a>
                         <a href="https://www.instagram.com/lasdeliciasdelatiayu/" target="_blank">
-                            <img src="iconos/instagram30.png">
+                            <img src="views/iconos/instagram30.png">
                         </a>
                         <a href="https://pin.it/5DxHbnw" target="_blank">
-                            <img src="iconos/pinterest30.png">
+                            <img src="views/iconos/pinterest30.png">
                         </a>
                     </div>
                 </div>
