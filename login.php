@@ -27,32 +27,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($Correo) || empty($Contrasena)) {
         echo "vacio";
     } else {
+
         // Consultar si el usuario existe
         $q = $conexion->prepare("SELECT * FROM usuarios WHERE Correo_Electronico = :correo AND Contrasena = :contrasena");
+        
         $q->execute(array(':correo' => $Correo, ':contrasena' => $Contrasena));
+        
         $resultadoq = $q->fetchAll();
 
-        // Si hay resultados
-        if (count($resultadoq) > 0) {
-            $_SESSION['Correo_electronico'] = $Correo;
+        //if ($resultadoq  && password_verify($Contrasena, $resultadoq['Contrasena'])){
+
+            // Si hay resultados
+            if (count($resultadoq) > 0) {
+            $_SESSION['Correo_Electronico'] = $Correo;
             $usuario = $resultadoq[0]; // Obtén el primer usuario
 
-            // Roles
-            if ($usuario['id_roles'] == 2) { // El cliente
-                header('Location: dashboard.php');
-                exit();
-            } else if ($usuario['id_roles'] == 1) { // Si es administrador
-                header('Location: admin/dashboard.php');
+                // Roles
+                if ($usuario['id_roles'] == 2) { // El cliente
+                    header('Location: dashboard.php');
+                    exit();
+                } else if ($usuario['id_roles'] == 1) { // Si es administrador
+                    header('Location: admin/dashboard.php');
+                    exit();
+                }
+
+            } else {
+                echo '
+                    <script>
+                        alert("Datos incorrectos");
+                        window.location = "signup.php";
+                    </script>';
                 exit();
             }
-        } else {
-            echo '
-                <script>
-                    alert("Datos incorrectos");
-                    window.location = "signup.php";
-                </script>';
-            exit();
-        }
+        //}
     }
 }
 
