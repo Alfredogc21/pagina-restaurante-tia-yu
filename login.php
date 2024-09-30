@@ -10,8 +10,6 @@ if (isset($_SESSION['usuarios'])) {
     $consultarROl->execute(array(':correo' => $email));
     $resultadoConsulta = $consultarROl->fetch();
 
-    print_r($resultadoConsulta);
-
     if ($resultadoConsulta['id_roles'] == 2) { // El cliente
         header('Location: dashboard.php');
         exit();
@@ -25,31 +23,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Correo = isset($_POST['usuario']) ? $_POST['usuario'] : null;
     $Contrasena = isset($_POST['Contrasena']) ? $_POST['Contrasena'] : null;
 
-    // Imprimir los datos para depuración
-    print_r($_POST);
-    print($Correo);
-    print($Contrasena);
-
+    // Validar que no estén vacíos
     if (empty($Correo) || empty($Contrasena)) {
         echo "vacio";
-    } 
-    
-   
-    
-    else {
+    } else {
+        // Consultar si el usuario existe
         $q = $conexion->prepare("SELECT * FROM usuarios WHERE Correo_Electronico = :correo AND Contrasena = :contrasena");
         $q->execute(array(':correo' => $Correo, ':contrasena' => $Contrasena));
         $resultadoq = $q->fetchAll();
 
-        
-       
-
+        // Si hay resultados
         if (count($resultadoq) > 0) {
             $_SESSION['Correo_electronico'] = $Correo;
             $usuario = $resultadoq[0]; // Obtén el primer usuario
 
-           
-
+            // Roles
             if ($usuario['id_roles'] == 2) { // El cliente
                 header('Location: dashboard.php');
                 exit();
@@ -57,9 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header('Location: admin/dashboard.php');
                 exit();
             }
-        } 
-        
-           else {
+        } else {
             echo '
                 <script>
                     alert("Datos incorrectos");
