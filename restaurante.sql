@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2024 a las 01:12:48
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.0.28
+-- Tiempo de generación: 03-11-2024 a las 04:48:09
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `accesos` (
-  `id_acceso` int(11) NOT NULL,
-  `tipo_acceso` char(15) NOT NULL,
-  `descripcion` varchar(255) NOT NULL
+  `idAcceso` int(11) NOT NULL,
+  `tipoAcceso` int(11) NOT NULL,
+  `descripcion` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -40,9 +40,18 @@ CREATE TABLE `accesos` (
 --
 
 CREATE TABLE `disponibilidades` (
-  `id_disponibilidad` int(11) NOT NULL,
-  `estado` int(20) NOT NULL
+  `idDisponibilidad` int(11) NOT NULL,
+  `estado` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `disponibilidades`
+--
+
+INSERT INTO `disponibilidades` (`idDisponibilidad`, `estado`) VALUES
+(1, 'Activo'),
+(2, 'Inactivo'),
+(3, 'Desactivado');
 
 -- --------------------------------------------------------
 
@@ -52,8 +61,8 @@ CREATE TABLE `disponibilidades` (
 
 CREATE TABLE `mesa` (
   `idMesa` int(11) NOT NULL,
-  `Num_sillas` int(11) DEFAULT NULL,
-  `Disponibilidad` int(11) NOT NULL
+  `numSillas` int(11) DEFAULT NULL,
+  `disponibilidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -64,13 +73,12 @@ CREATE TABLE `mesa` (
 
 CREATE TABLE `reserva` (
   `idReserva` int(11) NOT NULL,
-  `Hora` time DEFAULT NULL,
-  `Fecha` date DEFAULT NULL,
-  `Comentario` varchar(100) DEFAULT NULL,
-  `Num_Personas` int(11) DEFAULT NULL,
-  `IdCliente` int(11) DEFAULT NULL,
-  `IdMesa` int(11) DEFAULT NULL,
-  `fecha_reserva` datetime NOT NULL
+  `hora` time DEFAULT NULL,
+  `fecha` date DEFAULT NULL,
+  `comentario` varchar(100) DEFAULT NULL,
+  `numPersonas` int(11) DEFAULT NULL,
+  `idCliente` int(11) DEFAULT NULL,
+  `idMesa` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -80,7 +88,7 @@ CREATE TABLE `reserva` (
 --
 
 CREATE TABLE `roles` (
-  `id_roles` int(11) NOT NULL,
+  `idRoles` int(11) NOT NULL,
   `roles` char(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -88,7 +96,7 @@ CREATE TABLE `roles` (
 -- Volcado de datos para la tabla `roles`
 --
 
-INSERT INTO `roles` (`id_roles`, `roles`) VALUES
+INSERT INTO `roles` (`idRoles`, `roles`) VALUES
 (1, 'Administador'),
 (2, 'Cliente');
 
@@ -99,20 +107,28 @@ INSERT INTO `roles` (`id_roles`, `roles`) VALUES
 --
 
 CREATE TABLE `usuarios` (
-  `IdCliente` int(11) NOT NULL,
-  `Cedula` varchar(20) DEFAULT NULL,
-  `P_Nombre` char(60) NOT NULL,
-  `S_Nombre` char(60) DEFAULT NULL,
-  `P_Apellidos` char(60) NOT NULL,
-  `S_Apellido` char(60) DEFAULT NULL,
-  `id_roles` int(11) DEFAULT NULL,
-  `id_accesos` int(11) DEFAULT NULL,
-  `id_dispon` int(11) DEFAULT NULL,
-  `Telefono` varchar(45) NOT NULL,
-  `Correo_Electronico` varchar(45) NOT NULL,
-  `Contrasena` varchar(255) NOT NULL,
-  `Fecha` datetime NOT NULL
+  `idCliente` int(11) NOT NULL,
+  `cedula` varchar(20) DEFAULT NULL,
+  `p_Nombre` char(60) NOT NULL,
+  `s_Nombre` char(60) DEFAULT NULL,
+  `p_Apellidos` char(60) NOT NULL,
+  `s_Apellido` char(60) DEFAULT NULL,
+  `idRoles` int(11) DEFAULT NULL,
+  `idAccesos` int(11) DEFAULT NULL,
+  `idDispon` int(11) DEFAULT NULL,
+  `telefono` varchar(45) NOT NULL,
+  `correoElectronico` varchar(45) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `fechaRegistro` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`idCliente`, `cedula`, `p_Nombre`, `s_Nombre`, `p_Apellidos`, `s_Apellido`, `idRoles`, `idAccesos`, `idDispon`, `telefono`, `correoElectronico`, `password`, `fechaRegistro`) VALUES
+(1, '63323454534', 'swas', 'sdwasdwasd', 'chammos', 'xczcz', 2, NULL, NULL, '56453232334', 'kushbaksh@gmail.com', '$2y$10$GDSWZ1Ws1WmUhNe98D9Awu9CBtHeTT8RkivIhjzmlOMdUy.bxQvBu', '2024-11-02 22:18:39'),
+(2, '7463542323', 'campis', 'sfeasd', 'rodfig', 'rene', 2, NULL, 1, '463542254', 'juyhnasre@gmail.com', '$2y$10$gG8s31TUsHP48UbySotM7.6l6xt0X1MTRlBWBgElH9ignWT.lAU0O', '2024-11-02 22:36:28');
 
 -- --------------------------------------------------------
 
@@ -122,10 +138,10 @@ CREATE TABLE `usuarios` (
 
 CREATE TABLE `valoracion` (
   `idValoracion` int(11) NOT NULL,
-  `Comentario` longtext DEFAULT NULL,
-  `Estrellas` int(11) DEFAULT NULL,
-  `IdCliente` int(11) DEFAULT NULL,
-  `Fecha_valoracion` datetime NOT NULL
+  `comentario` longtext DEFAULT NULL,
+  `estrellas` int(11) DEFAULT NULL,
+  `idCliente` int(11) DEFAULT NULL,
+  `fechaValoracion` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -136,50 +152,50 @@ CREATE TABLE `valoracion` (
 -- Indices de la tabla `accesos`
 --
 ALTER TABLE `accesos`
-  ADD PRIMARY KEY (`id_acceso`);
+  ADD PRIMARY KEY (`idAcceso`);
 
 --
 -- Indices de la tabla `disponibilidades`
 --
 ALTER TABLE `disponibilidades`
-  ADD PRIMARY KEY (`id_disponibilidad`);
+  ADD PRIMARY KEY (`idDisponibilidad`);
 
 --
 -- Indices de la tabla `mesa`
 --
 ALTER TABLE `mesa`
-  ADD PRIMARY KEY (`idMesa`);
+  ADD PRIMARY KEY (`idMesa`),
+  ADD KEY `disponibilidad` (`disponibilidad`);
 
 --
 -- Indices de la tabla `reserva`
 --
 ALTER TABLE `reserva`
   ADD PRIMARY KEY (`idReserva`),
-  ADD KEY `IdCliente` (`IdCliente`),
-  ADD KEY `IdMesa` (`IdMesa`);
+  ADD KEY `idCliente` (`idCliente`),
+  ADD KEY `idMesa` (`idMesa`);
 
 --
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id_roles`);
+  ADD PRIMARY KEY (`idRoles`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`IdCliente`),
-  ADD KEY `id_roles` (`id_roles`),
-  ADD KEY `id_accesos` (`id_accesos`),
-  ADD KEY `is_dispo` (`id_dispon`),
-  ADD KEY `id_dispon` (`id_dispon`);
+  ADD PRIMARY KEY (`idCliente`),
+  ADD KEY `idRoles` (`idRoles`),
+  ADD KEY `idAccesos` (`idAccesos`),
+  ADD KEY `idDispon` (`idDispon`);
 
 --
 -- Indices de la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
   ADD PRIMARY KEY (`idValoracion`),
-  ADD KEY `IdCliente` (`IdCliente`);
+  ADD KEY `idCliente` (`idCliente`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -189,13 +205,13 @@ ALTER TABLE `valoracion`
 -- AUTO_INCREMENT de la tabla `accesos`
 --
 ALTER TABLE `accesos`
-  MODIFY `id_acceso` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAcceso` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `disponibilidades`
 --
 ALTER TABLE `disponibilidades`
-  MODIFY `id_disponibilidad` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDisponibilidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `mesa`
@@ -213,13 +229,13 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_roles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `valoracion`
@@ -232,20 +248,31 @@ ALTER TABLE `valoracion`
 --
 
 --
+-- Filtros para la tabla `mesa`
+--
+ALTER TABLE `mesa`
+  ADD CONSTRAINT `mesa_ibfk_1` FOREIGN KEY (`disponibilidad`) REFERENCES `disponibilidades` (`idDisponibilidad`);
+
+--
 -- Filtros para la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`IdCliente`) REFERENCES `usuarios` (`IdCliente`),
-  ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`IdMesa`) REFERENCES `mesa` (`idMesa`);
+  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `usuarios` (`idCliente`),
+  ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`idMesa`) REFERENCES `mesa` (`idMesa`);
 
 --
 -- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_roles`) REFERENCES `roles` (`id_roles`),
-  ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`id_accesos`) REFERENCES `accesos` (`id_acceso`),
-  ADD CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`IdCliente`) REFERENCES `valoracion` (`idValoracion`),
-  ADD CONSTRAINT `usuarios_ibfk_4` FOREIGN KEY (`id_dispon`) REFERENCES `disponibilidades` (`id_disponibilidad`);
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`idRoles`) REFERENCES `roles` (`idRoles`),
+  ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`idAccesos`) REFERENCES `accesos` (`idAcceso`),
+  ADD CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`idDispon`) REFERENCES `disponibilidades` (`idDisponibilidad`);
+
+--
+-- Filtros para la tabla `valoracion`
+--
+ALTER TABLE `valoracion`
+  ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `usuarios` (`idCliente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

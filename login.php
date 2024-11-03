@@ -1,19 +1,21 @@
-<?php session_start();
+<?php
+session_start();
 
 // Hacemos la conexión a la base de datos
 require 'conexion/conexion.php';
+
 $errores = 0;
 
 if (isset($_SESSION['usuarios'])) {
     $email = $_SESSION['usuarios'];
-    $consultarROl = $conexion->prepare('SELECT id_roles FROM usuarios WHERE Correo_Electronico = :correo');
-    $consultarROl->execute(array(':correo' => $email));
-    $resultadoConsulta = $consultarROl->fetch();
+    $consultarRol = $conexion->prepare('SELECT idRoles FROM usuarios WHERE correoElectronico = :correo');
+    $consultarRol->execute(array(':correo' => $email));
+    $resultadoConsulta = $consultarRol->fetch();
 
-    if ($resultadoConsulta['id_roles'] == 2) { // El cliente
+    if ($resultadoConsulta['idRoles'] == 2) { // Cliente
         header('Location: dashboard.php');
         exit();
-    } else if ($resultadoConsulta['id_roles'] == 1) { // Si es administrador
+    } else if ($resultadoConsulta['idRoles'] == 1) { // Administrador
         header('Location: admin/dashboard.php');
         exit();
     }
@@ -21,45 +23,39 @@ if (isset($_SESSION['usuarios'])) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Correo = isset($_POST['usuario']) ? $_POST['usuario'] : null;
-    $Contrasena = isset($_POST['Contrasena']) ? $_POST['Contrasena'] : null;
+    $password = isset($_POST['Contrasena']) ? $_POST['Contrasena'] : null;
 
     // Validar que no estén vacíos
-    if (empty($Correo) || empty($Contrasena)) {
+    if (empty($Correo) || empty($password)) {
         echo "vacio";
     } else {
+        // Consultar si el usuario existe solo por correo
+        $q = $conexion->prepare("SELECT * FROM usuarios WHERE correoElectronico = :correo");
+        $q->execute(array(':correo' => $Correo));
 
-        // Consultar si el usuario existe
-        $q = $conexion->prepare("SELECT * FROM usuarios WHERE Correo_Electronico = :correo AND Contrasena = :contrasena");
-        
-        $q->execute(array(':correo' => $Correo, ':contrasena' => $Contrasena));
-        
-        $resultadoq = $q->fetchAll();
+        $usuario = $q->fetch();
 
-        //if ($resultadoq  && password_verify($Contrasena, $resultadoq['Contrasena'])){
+        if ($usuario && password_verify($password, $usuario['password'])) {
+            // Contraseña correcta
+            $_SESSION['correoElectronico'] = $Correo;
 
-            // Si hay resultados
-            if (count($resultadoq) > 0) {
-            $_SESSION['Correo_Electronico'] = $Correo;
-            $usuario = $resultadoq[0]; // Obtén el primer usuario
-
-                // Roles
-                if ($usuario['id_roles'] == 2) { // El cliente
-                    header('Location: dashboard.php');
-                    exit();
-                } else if ($usuario['id_roles'] == 1) { // Si es administrador
-                    header('Location: admin/dashboard.php');
-                    exit();
-                }
-
-            } else {
-                echo '
-                    <script>
-                        alert("Datos incorrectos");
-                        window.location = "signup.php";
-                    </script>';
+            // Redireccionar según el rol del usuario
+            if ($usuario['idRoles'] == 2) { // Cliente
+                header('Location: dashboard.php');
+                exit();
+            } else if ($usuario['idRoles'] == 1) { // Administrador
+                header('Location: admin/dashboard.php');
                 exit();
             }
-        //}
+        } else {
+            // Datos incorrectos
+            echo '
+                <script>
+                    alert("Datos incorrectos");
+                    window.location = "signup.php";
+                </script>';
+            exit();
+        }
     }
 }
 
