@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante las Delicias de la Tía Yú</title>
-    <link rel="shortcut icon" href="views/iconos/logo_1.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="iconos/logo_1.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/9836403ffa.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="views/Estilos/style.css">
+    <link rel="stylesheet" href="Estilos/style.css">
 </head>
 
 <body>
     <header>
         <div class="header__superior">
             <div class="logo">
-                <img src="views/iconos/LAS DELICIAS.png" alt="">
+                <img src="iconos/LAS DELICIAS.png" alt="">
             </div>
         </div>
 
@@ -44,7 +44,7 @@
                         <li><a href="#galeria">Galeria</a></li>
                         <li><a href="registro_cliente.php">Reservas</a></li>
                         <li><a href="#contactos">Contacto</a></li>
-                        <li><a href="login.php">Login</a></li>
+                        <li><a href="../login.php">Login</a></li>
                     </ul>
                 </nav>
             </div>
@@ -54,10 +54,10 @@
     <main>
         <div class="slider">
             <ul>
-                <li><img src="views/platos/arroz.jpg"></li>
-                <li><img src="views/platos/sanco.jpg"></li>
-                <li><img src="views/platos/miga.jpg"></li>
-                <li><img src="views/platos/tamales.jpg"></li>
+                <li><img src="platos/arroz.jpg"></li>
+                <li><img src="platos/sanco.jpg"></li>
+                <li><img src="platos/miga.jpg"></li>
+                <li><img src="platos/tamales.jpg"></li>
             </ul>
         </div>
 
@@ -65,7 +65,7 @@
             <h1>¿Quienes Somos?</h1>
             <span class="linea"></span>
             <div class="his1">
-                <p><img src="views/platos/rest.jpg" alt=""></p>
+                <p><img src="platos/rest.jpg" alt=""></p>
                 <p>El Restaurante las Delicias de la Tía Yú lleva 8 años ofreciendo el servicio de almuerzos caseros
                     servidos a la mesa y para llevar. Pensado como un negocio familiar, se inició ofreciendo el servicio
                     solo los fines de semana y para temporada de fiestas, pero por petición de nuestros clientes se decidió
@@ -119,18 +119,18 @@
             <h1>Galeria De Fotos</h1>
             <span class="linea"></span>
             <div class="photo">
-                <a href="#image1"><img class="imagenescarrosel" src="views/platos/sancocho.jpg" alt=""></a>
-                <a href="#image2"><img class="imagenescarrosel" src="views/platos/ensalada.jpg" alt=""></a>
-                <a href="#image3"><img class="imagenescarrosel" src="views/platos/frijol1.jpg" alt=""></a>
-                <a href="#image4"><img class="imagenescarrosel" src="views/platos/domi.jpg" alt=""></a>
-                <a href="#image5"><img class="imagenescarrosel" src="views/platos/lentejab.jpg" alt=""></a>
-                <a href="#image6"><img class="imagenescarrosel" src="views/platos/migas1.jpg" alt=""></a>
-                <a href="#image7"><img class="imagenescarrosel" src="views/platos/pepino.jpg" alt=""></a>
-                <a href="#image8"><img class="imagenescarrosel" src="views/platos/sancocho1.jpg" alt=""></a>
-                <a href="#image9"><img class="imagenescarrosel" src="views/platos/tamalabierto.jpg" alt=""></a>
-                <a href="#image10"><img class="imagenescarrosel" src="views/platos/parrilla1.jpg" alt=""></a>
-                <a href="#image11"><img class="imagenescarrosel" src="views/platos/pollo1.jpg" alt=""></a>
-                <a href="#image12"><img class="imagenescarrosel" src="views/platos/pescado1.jpg" alt=""></a>
+                <a href="#image1"><img class="imagenescarrosel" src="platos/sancocho.jpg" alt=""></a>
+                <a href="#image2"><img class="imagenescarrosel" src="platos/ensalada.jpg" alt=""></a>
+                <a href="#image3"><img class="imagenescarrosel" src="platos/frijol1.jpg" alt=""></a>
+                <a href="#image4"><img class="imagenescarrosel" src="platos/domi.jpg" alt=""></a>
+                <a href="#image5"><img class="imagenescarrosel" src="platos/lentejab.jpg" alt=""></a>
+                <a href="#image6"><img class="imagenescarrosel" src="platos/migas1.jpg" alt=""></a>
+                <a href="#image7"><img class="imagenescarrosel" src="platos/pepino.jpg" alt=""></a>
+                <a href="#image8"><img class="imagenescarrosel" src="platos/sancocho1.jpg" alt=""></a>
+                <a href="#image9"><img class="imagenescarrosel" src="platos/tamalabierto.jpg" alt=""></a>
+                <a href="#image10"><img class="imagenescarrosel" src="platos/parrilla1.jpg" alt=""></a>
+                <a href="#image11"><img class="imagenescarrosel" src="platos/pollo1.jpg" alt=""></a>
+                <a href="#image12"><img class="imagenescarrosel" src="platos/pescado1.jpg" alt=""></a>
             </div>
         </section>
 
@@ -141,19 +141,19 @@
             </div>
             <div class="container">
                 <div class="card">
-                    <img src="views/platos/muchacho.jpg">
+                    <img src="platos/muchacho.jpg">
                     <h2>Muchacho Relleno</h2>
                     <p>Para el próximo 24 y 31 de diciembre ofrecemos el delicioso plato frío, consta de: Dos rebanadas de muchacho relleno, acompañado de arroz y ensalada de papa. </p>
                     <h3>$15000</h3>
                 </div>
                 <div class="card">
-                    <img src="views/platos/dulce.jpg">
+                    <img src="platos/dulce.jpg">
                     <h2>Dulce Nochebuena</h2>
                     <p>Para el próximo 24 y 31 de diciembre ofrecemos el delicioso dulce de papaya verde, limón y breva; acompañado de bizcochos y queso. (contenedor 16onz)</p><br>
                     <h3>$15000</h3>
                 </div>
                 <div class="card">
-                    <img src="views/platos/postres.jpg">
+                    <img src="platos/postres.jpg">
                     <h2>Postres</h2>
                     <p>Todos los sábados ofrecemos postres. Cada fin de semana se ofrece un sabor diferente como: Maracuyá, Limón, Gelatina de Colores, etc...(contenedor 16onz)</p><br>
                     <h3>$6000</h3>
@@ -163,73 +163,73 @@
 
         <article class="light-box" id="image1">
             <a href="#image12" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/sancocho (1).jpg" alt="">
+            <img src="platos/sancocho (1).jpg" alt="">
             <a href="#image2" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image2">
             <a href="#image1" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/ensalada.jpg" alt="">
+            <img src="platos/ensalada.jpg" alt="">
             <a href="#image3" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image3">
             <a href="#image2" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/frijol1.jpg" alt="">
+            <img src="platos/frijol1.jpg" alt="">
             <a href="#image4" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image4">
             <a href="#image3" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/domi (1).jpg" alt="">
+            <img src="platos/domi (1).jpg" alt="">
             <a href="#image5" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image5">
             <a href="#image4" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/lentejab.jpg" alt="">
+            <img src="platos/lentejab.jpg" alt="">
             <a href="#image6" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image6">
             <a href="#image5" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/migas1.jpg" alt="">
+            <img src="platos/migas1.jpg" alt="">
             <a href="#image7" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image7">
             <a href="#image6" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/pepino.jpg" alt="">
+            <img src="platos/pepino.jpg" alt="">
             <a href="#image8" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image8">
             <a href="#image7" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/sancocho1.jpg" alt="">
+            <img src="platos/sancocho1.jpg" alt="">
             <a href="#image9" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image9">
             <a href="#image8" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/tamal1 (2).jpg" alt="">
+            <img src="platos/tamal1 (2).jpg" alt="">
             <a href="#image10" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image10">
             <a href="#image9" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/parrilla1.jpg" alt="">
+            <img src="platos/parrilla1.jpg" alt="">
             <a href="#image11" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image11">
             <a href="#image10" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/pollo1.jpg" alt="">
+            <img src="platos/pollo1.jpg" alt="">
             <a href="#image12" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
         <article class="light-box" id="image12">
             <a href="#image11" class="next"> <i class="fa-sharp fa-solid fa-arrow-left"></i></a>
-            <img src="views/platos/pescado1.jpg" alt="">
+            <img src="platos/pescado1.jpg" alt="">
             <a href="#image1" class="next"> <i class="fa-solid fa-arrow-right"></i></a>
             <a href="#galeria" class="close"> X <i class=""></i></a>
         </article>
@@ -240,7 +240,7 @@
         <div class="container_footer_all">
             <div class="container_body">
                 <div class="columna">
-                    <img src="views/iconos/LAS DELICIAS.png">
+                    <img src="iconos/LAS DELICIAS.png">
 
                     <h2>Horario de Atención</h2>
                     <p>Lunes a Viernes</p>
@@ -253,26 +253,26 @@
                     <h2>Información de Contacto</h2>
                     <div class=row2>
                         <a href="https://goo.gl/maps/R2zp29zb5QXfWvY59" target="_blank">
-                            <img src="views/iconos/icons8-edificio-de-restaurante-50.png">
+                            <img src="iconos/icons8-edificio-de-restaurante-50.png">
                             <label>Mz B Casa 28 Barrio El Futuro Espinal, Tolima.
                             </label>
                         </a>
                     </div>
                     <div class=row2>
                         <a href="https://api.whatsapp.com/send?phone=573214172645&text=¿Cuál es el Menú para el Día de Hoy?" target="_blank">
-                            <img src="views/iconos/whatsapp30.png" href="">
+                            <img src="iconos/whatsapp30.png" href="">
                             <label>3214172645</label>
                         </a>
                     </div>
                     <div class=row2>
                         <a href="tel:573178338178">
-                            <img src="views/iconos/icons8-teléfono-desconectado-50.png">
+                            <img src="iconos/icons8-teléfono-desconectado-50.png">
                             <label>3178338178</label>
                         </a>
                     </div>
                     <div class=row2>
                         <a href="mailto:lasdeliciasdelatiayu@gmail.com" target="_blank">
-                            <img src="views/iconos/msj.png">
+                            <img src="iconos/msj.png">
                             <label>lasdeliciasdelatiayu@gmail.com</label>
                         </a>
                     </div>
@@ -281,13 +281,13 @@
                     <h2>Nuestras Redes Sociales</h2>
                     <div class=row>
                         <a href="https://www.facebook.com/profile.php?id=100087026563677" target="_blank">
-                            <img src="views/iconos/facebook50.png">
+                            <img src="iconos/facebook50.png">
                         </a>
                         <a href="https://www.instagram.com/lasdeliciasdelatiayu/" target="_blank">
-                            <img src="views/iconos/instagram30.png">
+                            <img src="iconos/instagram30.png">
                         </a>
                         <a href="https://pin.it/5DxHbnw" target="_blank">
-                            <img src="views/iconos/pinterest30.png">
+                            <img src="iconos/pinterest30.png">
                         </a>
                     </div>
                 </div>
