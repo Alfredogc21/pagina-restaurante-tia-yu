@@ -1,3 +1,4 @@
+-------para copiar tal cual-----
 CREATE TABLE roles (
     idRoles INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     roles CHAR(30)
@@ -26,7 +27,7 @@ CREATE TABLE usuarios (
     cedula VARCHAR(20),
     p_Nombre CHAR(60) NOT NULL,
     s_Nombre CHAR(60),
-    p_Apellidos CHAR(60) NOT NULL,
+    p_Apellido CHAR(60) NOT NULL,
     s_Apellido CHAR(60),
     idRoles INT(11), 
     idAccesos INT(11), 
@@ -62,8 +63,17 @@ CREATE TABLE valoracion (
 );
 
 
+INSERT INTO 'roles' ('idRoles', 'roles') VALUES (NULL, 'Administador'), (NULL, 'Empleado'), (NULL, 'Cliente');
+
+INSERT INTO 'disponibilidades' ('idDisponibilidad', 'estado') VALUES (NULL, 'Activo'), (NULL, 'Inactivo'), (NULL, 'Desactivado');
+
+
+
+
+
+
 -------insertar datos en tabla roles---------
-INSERT INTO 'roles' ('idRoles', 'roles') VALUES (NULL, 'Administador'), (NULL, 'Cliente');
+INSERT INTO `roles` (`idRoles`, `roles`) VALUES (NULL, 'Administador'), (NULL, 'Empleado'), (NULL, 'Cliente');
 
 -------insertar datos en tabla disponibilidades---------
-INSERT INTO 'disponibilidades' ('idDisponibilidad', 'estado') VALUES (NULL, 'Activo'), (NULL, 'Inactivo'), (NULL, 'Desactivado');
+INSERT INTO `disponibilidades` (`idDisponibilidad`, `estado`) VALUES (NULL, 'Activo'), (NULL, 'Inactivo'), (NULL, 'Desactivado');

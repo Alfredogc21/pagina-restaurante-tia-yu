@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2024 a las 04:48:09
+-- Tiempo de generación: 03-11-2024 a las 07:49:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -98,7 +98,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`idRoles`, `roles`) VALUES
 (1, 'Administador'),
-(2, 'Cliente');
+(2, 'Empleado'),
+(3, 'Cliente');
 
 -- --------------------------------------------------------
 
@@ -111,7 +112,7 @@ CREATE TABLE `usuarios` (
   `cedula` varchar(20) DEFAULT NULL,
   `p_Nombre` char(60) NOT NULL,
   `s_Nombre` char(60) DEFAULT NULL,
-  `p_Apellidos` char(60) NOT NULL,
+  `p_Apellido` char(60) NOT NULL,
   `s_Apellido` char(60) DEFAULT NULL,
   `idRoles` int(11) DEFAULT NULL,
   `idAccesos` int(11) DEFAULT NULL,
@@ -121,14 +122,6 @@ CREATE TABLE `usuarios` (
   `password` varchar(255) NOT NULL,
   `fechaRegistro` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`idCliente`, `cedula`, `p_Nombre`, `s_Nombre`, `p_Apellidos`, `s_Apellido`, `idRoles`, `idAccesos`, `idDispon`, `telefono`, `correoElectronico`, `password`, `fechaRegistro`) VALUES
-(1, '63323454534', 'swas', 'sdwasdwasd', 'chammos', 'xczcz', 2, NULL, NULL, '56453232334', 'kushbaksh@gmail.com', '$2y$10$GDSWZ1Ws1WmUhNe98D9Awu9CBtHeTT8RkivIhjzmlOMdUy.bxQvBu', '2024-11-02 22:18:39'),
-(2, '7463542323', 'campis', 'sfeasd', 'rodfig', 'rene', 2, NULL, 1, '463542254', 'juyhnasre@gmail.com', '$2y$10$gG8s31TUsHP48UbySotM7.6l6xt0X1MTRlBWBgElH9ignWT.lAU0O', '2024-11-02 22:36:28');
 
 -- --------------------------------------------------------
 
@@ -229,13 +222,13 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `idRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `valoracion`
