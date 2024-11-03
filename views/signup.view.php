@@ -61,7 +61,7 @@
 
             <input class="buttons" type="submit" name="" value="Registrarse">
             <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
-            <p><a href="login.php">Ingresar</a></p>
+            <p><a href="login.php">Iniciar sesión</a></p>
         </form>
 
     </main>

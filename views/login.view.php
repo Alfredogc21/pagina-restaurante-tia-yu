@@ -43,14 +43,14 @@
     </header>
     <main>
 
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-login">
-    <h5>Formulario Login</h5>
-    <input class="controls" type="text" name="usuario" placeholder="Usuario" required>
-    <input class="controls" type="password" name="Contrasena" placeholder="Contraseña" required>
-    <input class="buttons" type="submit" value="Ingresar">
-    <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
-    <p><a href="signup.php">Registrarse</a></p>
-</form>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-login">
+            <h5>Iniciar sesión</h5>
+            <input class="controls" type="text" name="usuario" placeholder="Usuario" required>
+            <input class="controls" type="password" name="Contrasena" placeholder="Contraseña" required>
+            <input class="buttons" type="submit" value="Ingresar">
+            <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
+            <p><a href="signup.php">Registrarse</a></p>
+        </form>
 
     </main>
 
