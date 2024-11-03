@@ -12,12 +12,12 @@ if (isset($_SESSION['usuarios'])) {
     $consultarRol->execute(array(':correo' => $email));
     $resultadoConsulta = $consultarRol->fetch();
 
-    if ($resultadoConsulta['idRoles'] == 2) { // Cliente
-        header('Location: dashboard.php');
-        exit();
-    } else if ($resultadoConsulta['idRoles'] == 1) { // Administrador
-        header('Location: admin/dashboard.php');
-        exit();
+    if ($resultadoConsulta['idRoles'] == 1) { // Administrador
+        header('Location: administrador/dashboard.php');
+    } else if ($resultadoConsulta['idRoles'] == 2) { // Empleado
+        header('Location: empleado/dashboard.php');
+    } else if ($resultadoConsulta['idRoles'] == 3) { // Cliente
+        header('Location: cliente/dashboard.php');
     }
 }
 
@@ -27,7 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validar que no estén vacíos
     if (empty($Correo) || empty($password)) {
-        echo "vacio";
+        echo "<script>
+                alert('Todos los campos son obligatorios');
+                window.location = 'login.php';
+            </script>";
     } else {
         // Consultar si el usuario existe solo por correo
         $q = $conexion->prepare("SELECT * FROM usuarios WHERE correoElectronico = :correo");
@@ -37,15 +40,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($usuario && password_verify($password, $usuario['password'])) {
             // Contraseña correcta
-            $_SESSION['correoElectronico'] = $Correo;
+            $_SESSION['usuarios'] = $Correo;
 
             // Redireccionar según el rol del usuario
-            if ($usuario['idRoles'] == 2) { // Cliente
-                header('Location: dashboard.php');
-                exit();
-            } else if ($usuario['idRoles'] == 1) { // Administrador
-                header('Location: admin/dashboard.php');
-                exit();
+            if ($usuario['idRoles'] == 1) { // Administrador
+                header('Location: administrador/dashboard.php');
+            } else if ($usuario['idRoles'] == 2) { // Empleado
+                header('Location: empleado/dashboard.php');
+            } else if ($usuario['idRoles'] == 3) { // Cliente
+                header('Location: cliente/dashboard.php');
             }
         } else {
             // Datos incorrectos
@@ -54,10 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     alert("Datos incorrectos");
                     window.location = "signup.php";
                 </script>';
-            exit();
         }
     }
 }
 
 require "views/login.view.php";
-?>

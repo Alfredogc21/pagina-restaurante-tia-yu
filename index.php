@@ -4,18 +4,20 @@
 require 'conexion/conexion.php';
 
 if (isset($_SESSION['usuarios'])) {
-    // $email = $_SESSION['usuarios'];
-    // $consultarROl = $conexion->prepare('SELECT roles_id FROM usuarios WHERE correo = :correo');
-    // $consultarROl->execute(array(':correo' => $email));
-    // $resultadoConsulta = $consultarROl->fetch();
+    $email = $_SESSION['usuarios'];
+    $consultarROl = $conexion->prepare('SELECT idRoles FROM usuarios WHERE correoElectronico = :correo');
+    $consultarROl->execute(array(':correo' => $email));
+    $resultadoConsulta = $consultarROl->fetch();
 
-    // if($resultadoConsulta['roles_id'] == 2){ // El cliente
-    //     header('Location: dashboard.php');
-    // } else if($resultadoConsulta['roles_id'] == 1){ // Si es administrador
-    //     header('Location: admin/dashboard.php');
-    // }
+    if ($resultadoConsulta['idRoles'] == 1) { // Administrador
+        header('Location: administrador/dashboard.php');
+    } else if ($resultadoConsulta['idRoles'] == 2) { // Empleado
+        header('Location: empleado/dashboard.php');
+    } else if ($resultadoConsulta['idRoles'] == 3) { // Cliente
+        header('Location: cliente/dashboard.php');
+    }
 } else {
-    header('Location: views/index.view.php');
+    require 'views/index.view.php';
 }
 
 ?>
