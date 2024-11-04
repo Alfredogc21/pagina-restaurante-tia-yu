@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Restaurante</title>
   <link rel="stylesheet" href="views/estilos/dashboard.css">
+  <link rel="shortcut icon" href="../views/iconos/logo_1.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -44,7 +45,7 @@
     <div class="main-content">
       <header class="header">
         <div class="header-left">
-          <span>Socio: <?php echo $nombreUsuario; ?></span>
+          <span>Usuario: <?php echo $nombreUsuario; ?></span>
         </div>
         <div class="header-right">
           <a href="perfil.php" class="cerrarSesion"><button id="menu-toggle"><i class="fas fa-cog"></i> Ajustes</button></a>

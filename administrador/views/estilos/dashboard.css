@@ -1,6 +1,11 @@
+::selection {
+    background-color: var(--color-primario);
+    color: #fff;
+}
+
 :root {
-    --color-primario: #ff5722;
-    --color-secundario: #f4f4f4;
+    --color-primario: #ff0000;
+    --color-secundario: #000;
     --color-terciario: #333;
     --color-submenu-active: rgba(255, 87, 34, 0.2);
     --color-menu-clicked: rgba(255, 87, 34, 0.5);
@@ -54,7 +59,7 @@
     display: flex;
     align-items: center;
     padding: 15px;
-    color: var(--color-terciario);
+    color: #fff;
     text-decoration: none;
     font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
@@ -108,7 +113,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #e0e0e0;
+    background-color: var(--color-secundario);
     color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -130,7 +135,7 @@
   .header-right button {
     background: none;
     border: none;
-    color: #333;
+    color: #fff;
     font-size: 16px;
     margin-left: 20px;
     cursor: pointer;
@@ -139,7 +144,7 @@
   }
   
   .header-right button:hover {
-    color: var(--color-primario);
+    color: #ffdada;
   }
   
   .cerrarSesion {
