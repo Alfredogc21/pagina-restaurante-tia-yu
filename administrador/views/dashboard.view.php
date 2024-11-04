@@ -18,6 +18,13 @@
         <li class="nav-item">
           <a href="dashboard.php"><i class="fas fa-home"></i><span class="nav-text">Inicio</span></a>
         </li>
+        <li class="nav-item has-submenu">
+          <a href="#"><i class="fas fa-calendar-alt"></i><span class="nav-text">Usuario</span><i class="fas fa-caret-down"></i></a>
+          <ul class="submenu">
+            <li><a href="registrarUsuarios.php">Registrar</a></li>
+            <li><a href="#">Consultar</a></li>
+          </ul>
+        </li>
         <li class="nav-item">
           <a href="#"><i class="fas fa-utensils"></i><span class="nav-text">Menú</span></a>
         </li>
@@ -48,8 +55,7 @@
           <span>Usuario: <?php echo $nombreUsuario; ?></span>
         </div>
         <div class="header-right">
-          <a href="perfil.php" class="cerrarSesion"><button id="menu-toggle"><i class="fas fa-cog"></i> Ajustes</button></a>
-          <a href="../cerrar.php" class="cerrarSesion"><button><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button></a>
+          <a href="../cerrarSesion.php" class="cerrarSesion"><button id="menu-toggle"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button></a>
         </div>
       </header>
       <main class="content">
