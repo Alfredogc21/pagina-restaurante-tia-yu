@@ -43,7 +43,7 @@ if (isset($_POST['cedula']) && isset($_POST['nombre1']) && isset($_POST['apellid
         // Registrar nuevo usuarios
 
         if (empty($nombre2) && empty($apellido2)) {
-            $registrar_cliente = $conexion->prepare("INSERT INTO usuarios (cedula, p_Nombre, p_Apellidos, telefono, correoElectronico, password, idRoles, idDispon) VALUES (:cedula, :nombre1, :apellido1, :telefono, :correo, :password, 2, 1)");
+            $registrar_cliente = $conexion->prepare("INSERT INTO usuarios (cedula, p_Nombre, p_Apellido, telefono, correoElectronico, password, idRoles, idDispon) VALUES (:cedula, :nombre1, :apellido1, :telefono, :correo, :password, 2, 1)");
 
             $registrar_cliente->bindParam(":cedula", $cedula);
             $registrar_cliente->bindParam(":nombre1", $nombre1);
@@ -52,7 +52,7 @@ if (isset($_POST['cedula']) && isset($_POST['nombre1']) && isset($_POST['apellid
             $registrar_cliente->bindParam(":correo", $correo);
             $registrar_cliente->bindParam(":password", $password_encriptada);
         } elseif (empty($nombre2)) {
-            $registrar_cliente = $conexion->prepare("INSERT INTO usuarios (cedula, p_Nombre, p_Apellidos, s_Apellido, telefono, correoElectronico, password, idRoles, idDispon) VALUES (:cedula, :nombre1, :apellido1, :apellido2, :telefono, :correo, :password, 2, 1)");
+            $registrar_cliente = $conexion->prepare("INSERT INTO usuarios (cedula, p_Nombre, p_Apellido, s_Apellido, telefono, correoElectronico, password, idRoles, idDispon) VALUES (:cedula, :nombre1, :apellido1, :apellido2, :telefono, :correo, :password, 2, 1)");
 
             $registrar_cliente->bindParam(":cedula", $cedula);
             $registrar_cliente->bindParam(":nombre1", $nombre1);
@@ -62,7 +62,7 @@ if (isset($_POST['cedula']) && isset($_POST['nombre1']) && isset($_POST['apellid
             $registrar_cliente->bindParam(":correo", $correo);
             $registrar_cliente->bindParam(":password", $password_encriptada);
         } elseif (empty($apellido2)) {
-            $registrar_cliente = $conexion->prepare("INSERT INTO usuarios (cedula, p_Nombre, s_Nombre, p_Apellidos, telefono, correoElectronico, password, idRoles, idDispon) VALUES (:cedula, :nombre1, :nombre2, :apellido1, :telefono, :correo, :password, 2, 1)");
+            $registrar_cliente = $conexion->prepare("INSERT INTO usuarios (cedula, p_Nombre, s_Nombre, p_Apellido, telefono, correoElectronico, password, idRoles, idDispon) VALUES (:cedula, :nombre1, :nombre2, :apellido1, :telefono, :correo, :password, 2, 1)");
 
             $registrar_cliente->bindParam(":cedula", $cedula);
             $registrar_cliente->bindParam(":nombre1", $nombre1);
@@ -72,7 +72,7 @@ if (isset($_POST['cedula']) && isset($_POST['nombre1']) && isset($_POST['apellid
             $registrar_cliente->bindParam(":correo", $correo);
             $registrar_cliente->bindParam(":password", $password_encriptada);
         } else {
-            $registrar_cliente = $conexion->prepare("INSERT INTO usuarios (cedula, p_Nombre, s_Nombre, p_Apellidos, s_Apellido, telefono, correoElectronico, password, idRoles, idDispon) VALUES (:cedula, :nombre1, :nombre2, :apellido1, :apellido2, :telefono, :correo, :password, 2, 1)");
+            $registrar_cliente = $conexion->prepare("INSERT INTO usuarios (cedula, p_Nombre, s_Nombre, p_Apellido, s_Apellido, telefono, correoElectronico, password, idRoles, idDispon) VALUES (:cedula, :nombre1, :nombre2, :apellido1, :apellido2, :telefono, :correo, :password, 2, 1)");
 
             $registrar_cliente->bindParam(":cedula", $cedula);
             $registrar_cliente->bindParam(":nombre1", $nombre1);
