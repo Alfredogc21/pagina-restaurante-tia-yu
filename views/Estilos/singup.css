@@ -9,9 +9,9 @@ body {
   background-image: url('bg.png');
 }
 
-.form-login {
-  width: 400px;
-  height: 590px;
+.form-singup {
+  width: 550px;
+  height: 620px;
   background: #4e4d4d;
   margin: 20px auto 50px auto;
   box-shadow: 7px 13px 37px #000;
@@ -28,12 +28,17 @@ body {
 }
 
 .controls {
+  width: 100%;
   flex: 1;
   padding: 8px;
   font-size: 16px;
+  margin-bottom: 15px;
+  padding: 11px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background: #252323;
   color: white;
+  font-weight: bold;
 }
 
 .buttons {
@@ -43,5 +48,30 @@ body {
   border: none;
   color: white;
   margin-bottom: 16px;
-  cursor: pointer;
+}
+
+.form-singup h5 {
+  margin: 0;
+  text-align: center;
+  height: 40px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+  padding: 0px 0px 50px 0px;
+  font-size: 2rem;
+}
+
+.form-singup p {
+  height: 40px;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+.form-singup a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.form-singup a:hover {
+  text-decoration: underline;
 }

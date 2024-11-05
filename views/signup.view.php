@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="views/iconos/logo_1.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/9836403ffa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="views/Estilos/style.css">
-    <link rel="stylesheet" href="views/Estilos/login.css">
     <link rel="stylesheet" href="views/Estilos/singup.css">
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -44,7 +43,7 @@
     </header>
     <main>
 
-        <form method="post" id="signup" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-login">
+        <form method="post" id="signup" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-singup">
             <h5>Registro</h5>
             <input class="controls" type="number" name="cedula" value="" placeholder="Cedula" required>
             <div class="box">
