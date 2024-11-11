@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2024 a las 07:49:45
+-- Tiempo de generación: 11-11-2024 a las 10:56:12
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -31,27 +31,51 @@ CREATE TABLE `accesos` (
   `idAcceso` int(11) NOT NULL,
   `tipoAcceso` int(11) NOT NULL,
   `descripcion` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `disponibilidades`
+-- Estructura de tabla para la tabla `disponibilidadmesa`
 --
 
-CREATE TABLE `disponibilidades` (
-  `idDisponibilidad` int(11) NOT NULL,
+CREATE TABLE `disponibilidadmesa` (
+  `idDisponibilidadMesa` int(11) NOT NULL,
   `estado` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
--- Volcado de datos para la tabla `disponibilidades`
+-- Volcado de datos para la tabla `disponibilidadmesa`
 --
 
-INSERT INTO `disponibilidades` (`idDisponibilidad`, `estado`) VALUES
+INSERT INTO `disponibilidadmesa` (`idDisponibilidadMesa`, `estado`) VALUES
+(1, 'Reservado'),
+(2, 'Disponible'),
+(3, 'Reservado'),
+(4, 'Disponible');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `estadousuario`
+--
+
+CREATE TABLE `estadousuario` (
+  `idEstadoUsuario` int(11) NOT NULL,
+  `estado` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `estadousuario`
+--
+
+INSERT INTO `estadousuario` (`idEstadoUsuario`, `estado`) VALUES
 (1, 'Activo'),
 (2, 'Inactivo'),
-(3, 'Desactivado');
+(3, 'Desactivado'),
+(4, 'Activo'),
+(5, 'Inactivo'),
+(6, 'Desactivado');
 
 -- --------------------------------------------------------
 
@@ -61,9 +85,17 @@ INSERT INTO `disponibilidades` (`idDisponibilidad`, `estado`) VALUES
 
 CREATE TABLE `mesa` (
   `idMesa` int(11) NOT NULL,
-  `numSillas` int(11) DEFAULT NULL,
   `disponibilidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `mesa`
+--
+
+INSERT INTO `mesa` (`idMesa`, `disponibilidad`) VALUES
+(2, 1),
+(1, 2),
+(3, 2);
 
 -- --------------------------------------------------------
 
@@ -77,9 +109,9 @@ CREATE TABLE `reserva` (
   `fecha` date DEFAULT NULL,
   `comentario` varchar(100) DEFAULT NULL,
   `numPersonas` int(11) DEFAULT NULL,
-  `idCliente` int(11) DEFAULT NULL,
+  `idUsuarios` int(11) DEFAULT NULL,
   `idMesa` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -90,7 +122,7 @@ CREATE TABLE `reserva` (
 CREATE TABLE `roles` (
   `idRoles` int(11) NOT NULL,
   `roles` char(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `roles`
@@ -99,7 +131,10 @@ CREATE TABLE `roles` (
 INSERT INTO `roles` (`idRoles`, `roles`) VALUES
 (1, 'Administador'),
 (2, 'Empleado'),
-(3, 'Cliente');
+(3, 'Cliente'),
+(4, 'Administador'),
+(5, 'Empleado'),
+(6, 'Cliente');
 
 -- --------------------------------------------------------
 
@@ -108,20 +143,19 @@ INSERT INTO `roles` (`idRoles`, `roles`) VALUES
 --
 
 CREATE TABLE `usuarios` (
-  `idCliente` int(11) NOT NULL,
+  `idUsuarios` int(11) NOT NULL,
   `cedula` varchar(20) DEFAULT NULL,
-  `p_Nombre` char(60) NOT NULL,
-  `s_Nombre` char(60) DEFAULT NULL,
-  `p_Apellido` char(60) NOT NULL,
-  `s_Apellido` char(60) DEFAULT NULL,
+  `nombres` varchar(60) NOT NULL,
+  `apellido` varchar(60) NOT NULL,
   `idRoles` int(11) DEFAULT NULL,
   `idAccesos` int(11) DEFAULT NULL,
-  `idDispon` int(11) DEFAULT NULL,
+  `idDisponMesa` int(11) DEFAULT NULL,
+  `idEstadoUsuario` int(11) DEFAULT NULL,
   `telefono` varchar(45) NOT NULL,
   `correoElectronico` varchar(45) NOT NULL,
   `password` varchar(255) NOT NULL,
   `fechaRegistro` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -133,9 +167,9 @@ CREATE TABLE `valoracion` (
   `idValoracion` int(11) NOT NULL,
   `comentario` longtext DEFAULT NULL,
   `estrellas` int(11) DEFAULT NULL,
-  `idCliente` int(11) DEFAULT NULL,
+  `idUsuarios` int(11) DEFAULT NULL,
   `fechaValoracion` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
 -- Índices para tablas volcadas
@@ -148,10 +182,16 @@ ALTER TABLE `accesos`
   ADD PRIMARY KEY (`idAcceso`);
 
 --
--- Indices de la tabla `disponibilidades`
+-- Indices de la tabla `disponibilidadmesa`
 --
-ALTER TABLE `disponibilidades`
-  ADD PRIMARY KEY (`idDisponibilidad`);
+ALTER TABLE `disponibilidadmesa`
+  ADD PRIMARY KEY (`idDisponibilidadMesa`);
+
+--
+-- Indices de la tabla `estadousuario`
+--
+ALTER TABLE `estadousuario`
+  ADD PRIMARY KEY (`idEstadoUsuario`);
 
 --
 -- Indices de la tabla `mesa`
@@ -165,7 +205,7 @@ ALTER TABLE `mesa`
 --
 ALTER TABLE `reserva`
   ADD PRIMARY KEY (`idReserva`),
-  ADD KEY `idCliente` (`idCliente`),
+  ADD KEY `idUsuarios` (`idUsuarios`),
   ADD KEY `idMesa` (`idMesa`);
 
 --
@@ -178,17 +218,18 @@ ALTER TABLE `roles`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`idCliente`),
+  ADD PRIMARY KEY (`idUsuarios`),
   ADD KEY `idRoles` (`idRoles`),
   ADD KEY `idAccesos` (`idAccesos`),
-  ADD KEY `idDispon` (`idDispon`);
+  ADD KEY `idDisponMesa` (`idDisponMesa`),
+  ADD KEY `idEstadoUsuario` (`idEstadoUsuario`);
 
 --
 -- Indices de la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
   ADD PRIMARY KEY (`idValoracion`),
-  ADD KEY `idCliente` (`idCliente`);
+  ADD KEY `idUsuarios` (`idUsuarios`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -201,16 +242,22 @@ ALTER TABLE `accesos`
   MODIFY `idAcceso` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `disponibilidades`
+-- AUTO_INCREMENT de la tabla `disponibilidadmesa`
 --
-ALTER TABLE `disponibilidades`
-  MODIFY `idDisponibilidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `disponibilidadmesa`
+  MODIFY `idDisponibilidadMesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `estadousuario`
+--
+ALTER TABLE `estadousuario`
+  MODIFY `idEstadoUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `mesa`
 --
 ALTER TABLE `mesa`
-  MODIFY `idMesa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `reserva`
@@ -222,13 +269,13 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `idRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `valoracion`
@@ -244,13 +291,13 @@ ALTER TABLE `valoracion`
 -- Filtros para la tabla `mesa`
 --
 ALTER TABLE `mesa`
-  ADD CONSTRAINT `mesa_ibfk_1` FOREIGN KEY (`disponibilidad`) REFERENCES `disponibilidades` (`idDisponibilidad`);
+  ADD CONSTRAINT `mesa_ibfk_1` FOREIGN KEY (`disponibilidad`) REFERENCES `disponibilidadmesa` (`idDisponibilidadMesa`);
 
 --
 -- Filtros para la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `usuarios` (`idCliente`),
+  ADD CONSTRAINT `reserva_ibfk_1` FOREIGN KEY (`idUsuarios`) REFERENCES `usuarios` (`idUsuarios`),
   ADD CONSTRAINT `reserva_ibfk_2` FOREIGN KEY (`idMesa`) REFERENCES `mesa` (`idMesa`);
 
 --
@@ -259,13 +306,14 @@ ALTER TABLE `reserva`
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`idRoles`) REFERENCES `roles` (`idRoles`),
   ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`idAccesos`) REFERENCES `accesos` (`idAcceso`),
-  ADD CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`idDispon`) REFERENCES `disponibilidades` (`idDisponibilidad`);
+  ADD CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`idDisponMesa`) REFERENCES `disponibilidadmesa` (`idDisponibilidadMesa`),
+  ADD CONSTRAINT `usuarios_ibfk_4` FOREIGN KEY (`idEstadoUsuario`) REFERENCES `estadousuario` (`idEstadoUsuario`);
 
 --
 -- Filtros para la tabla `valoracion`
 --
 ALTER TABLE `valoracion`
-  ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `usuarios` (`idCliente`);
+  ADD CONSTRAINT `valoracion_ibfk_1` FOREIGN KEY (`idUsuarios`) REFERENCES `usuarios` (`idUsuarios`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
