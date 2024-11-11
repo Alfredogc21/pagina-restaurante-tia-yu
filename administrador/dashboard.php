@@ -8,12 +8,12 @@ if (isset($_SESSION['usuarios'])) {
 	require '../conexion/conexion.php';
 
     // Conocer el rol del usuario
-    $consultarROl = $conexion->prepare('SELECT idRoles, p_Nombre, p_Apellido FROM usuarios WHERE correoElectronico = :correo');
+    $consultarROl = $conexion->prepare('SELECT idRoles, nombres, apellidos FROM usuarios WHERE correoElectronico = :correo');
     $consultarROl->execute(array(':correo' => $correo));
     $resultadoConsulta = $consultarROl->fetch();
 
     //Nombre y apellido del usuario
-    $nombreUsuario = $resultadoConsulta['p_Nombre'] . ' ' . $resultadoConsulta['p_Apellido'];
+    $nombreUsuario = $resultadoConsulta['nombres'] . ' ' . $resultadoConsulta['apellidos'];
 
 
     if ($resultadoConsulta['idRoles'] == 1) { // Administrador

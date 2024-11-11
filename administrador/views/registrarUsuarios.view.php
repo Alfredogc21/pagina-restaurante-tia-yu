@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Restaurante</title>
+  <title>Registrar Usuarios</title>
   <link rel="stylesheet" href="views/estilos/dashboard.css">
+  <link rel="stylesheet" href="views/estilos/registrarUsuarios.css">
   <link rel="shortcut icon" href="../views/iconos/logo_1.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -21,7 +22,7 @@
         <li class="nav-item has-submenu">
           <a href="#"><i class="fas fa-calendar-alt"></i><span class="nav-text">Usuario</span><i class="fas fa-caret-down"></i></a>
           <ul class="submenu">
-            <li><a href="registrarUsuarios.php">Registrar</a></li>
+            <li><a href="#">Registrar</a></li>
             <li><a href="#">Consultar</a></li>
           </ul>
         </li>
@@ -60,13 +61,37 @@
       </header>
       <main class="content">
         <div class="welcome-card">
-          <h1>Mensaje de bienvenida</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum itaque consequuntur, illum aliquam minus impedit eos nostrum porro excepturi! Qui repellendus exercitationem nisi unde esse autem asperiores vitae nihil ipsam?🌍</p>
+            <main>
+                <form method="post" id="signup" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-singup">
+                    <h5>Registro de Usuario</h5>
+                    <input class="controls" type="number" maxlength="11" name="cedula" value="" placeholder="Cedula" required>
+                    <div class="box">
+                        <input class="controls" type="text" name="nombres" placeholder="Primer Nombre" required>
+                    </div>
+                    <div class="box">
+                        <input class="controls" type="text" name="apellidos" placeholder="Primer Apellido" required>
+                    </div>
+                    <input class="controls" type="number" maxlength="11" name="telefono" placeholder="Telefono" require>
+                    <input class="controls" type="mail" name="correo" placeholder="Correo" require>
+                    <select class="controls2" id="rol" name="rol" required>
+                      <option value="" disabled selected>Seleccione un rol</option>
+                        <?php foreach ($roles as $rol):?>
+                          <option value="<?php echo $rol['idRoles'];?>">
+                            <?php echo $rol['roles'];?></option>
+                        <?php endforeach;?>
+                    </select>
+                    <input class="controls" type="password" name="password" placeholder="Contraseña" required>
+                    <input class="controls" type="password" name="passwordConfirm" placeholder="Confirmar Contraseña" required>
+                    <br></br>
+                    <input class="buttons" type="submit" name="" value="Registrarse">
+                </form>
+            </main>
         </div>
       </main>
     </div>
   </div>
 
   <script src="views/js/dashboard.js"></script>
+  <script src="views/js/registrarUsuarios.js"></script>
 </body>
 </html>
