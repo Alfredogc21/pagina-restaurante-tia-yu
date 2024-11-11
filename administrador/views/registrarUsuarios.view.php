@@ -33,7 +33,7 @@
           <a href="#"><i class="fas fa-calendar-alt"></i><span class="nav-text">Reservas</span><i class="fas fa-caret-down"></i></a>
           <ul class="submenu">
             <li><a href="#">Ver Reservas</a></li>
-            <li><a href="#">Nueva Reserva</a></li>
+            <li><a href="registrarReservas.php">Nueva Reserva</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -64,16 +64,14 @@
             <main>
                 <form method="post" id="signup" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-singup">
                     <h5>Registro de Usuario</h5>
-                    <input class="controls" type="number" name="cedula" value="" placeholder="Cedula" required>
+                    <input class="controls" type="number" maxlength="11" name="cedula" value="" placeholder="Cedula" required>
                     <div class="box">
-                        <input class="controls" type="text" name="nombre1" placeholder="Primer Nombre" required>
-                        <input class="controls" type="text" name="nombre2" placeholder="Segundo Nombre">
+                        <input class="controls" type="text" name="nombres" placeholder="Primer Nombre" required>
                     </div>
                     <div class="box">
-                        <input class="controls" type="text" name="apellido1" placeholder="Primer Apellido" required>
-                        <input class="controls" type="text" name="apellido2" placeholder="Segundo Apellido">
+                        <input class="controls" type="text" name="apellidos" placeholder="Primer Apellido" required>
                     </div>
-                    <input class="controls" type="number" name="telefono" placeholder="Telefono" require>
+                    <input class="controls" type="number" maxlength="11" name="telefono" placeholder="Telefono" require>
                     <input class="controls" type="mail" name="correo" placeholder="Correo" require>
                     <select class="controls2" id="rol" name="rol" required>
                       <option value="" disabled selected>Seleccione un rol</option>
@@ -83,6 +81,7 @@
                         <?php endforeach;?>
                     </select>
                     <input class="controls" type="password" name="password" placeholder="Contraseña" required>
+                    <input class="controls" type="password" name="passwordConfirm" placeholder="Confirmar Contraseña" required>
                     <br></br>
                     <input class="buttons" type="submit" name="" value="Registrarse">
                 </form>
@@ -93,5 +92,6 @@
   </div>
 
   <script src="views/js/dashboard.js"></script>
+  <script src="views/js/registrarUsuarios.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2024 a las 10:56:12
+-- Tiempo de generación: 11-11-2024 a las 12:07:24
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -50,9 +50,7 @@ CREATE TABLE `disponibilidadmesa` (
 
 INSERT INTO `disponibilidadmesa` (`idDisponibilidadMesa`, `estado`) VALUES
 (1, 'Reservado'),
-(2, 'Disponible'),
-(3, 'Reservado'),
-(4, 'Disponible');
+(2, 'Disponible');
 
 -- --------------------------------------------------------
 
@@ -72,10 +70,7 @@ CREATE TABLE `estadousuario` (
 INSERT INTO `estadousuario` (`idEstadoUsuario`, `estado`) VALUES
 (1, 'Activo'),
 (2, 'Inactivo'),
-(3, 'Desactivado'),
-(4, 'Activo'),
-(5, 'Inactivo'),
-(6, 'Desactivado');
+(3, 'Desactivado');
 
 -- --------------------------------------------------------
 
@@ -131,10 +126,7 @@ CREATE TABLE `roles` (
 INSERT INTO `roles` (`idRoles`, `roles`) VALUES
 (1, 'Administador'),
 (2, 'Empleado'),
-(3, 'Cliente'),
-(4, 'Administador'),
-(5, 'Empleado'),
-(6, 'Cliente');
+(3, 'Cliente');
 
 -- --------------------------------------------------------
 
@@ -146,7 +138,7 @@ CREATE TABLE `usuarios` (
   `idUsuarios` int(11) NOT NULL,
   `cedula` varchar(20) DEFAULT NULL,
   `nombres` varchar(60) NOT NULL,
-  `apellido` varchar(60) NOT NULL,
+  `apellidos` varchar(60) NOT NULL,
   `idRoles` int(11) DEFAULT NULL,
   `idAccesos` int(11) DEFAULT NULL,
   `idDisponMesa` int(11) DEFAULT NULL,
@@ -245,13 +237,13 @@ ALTER TABLE `accesos`
 -- AUTO_INCREMENT de la tabla `disponibilidadmesa`
 --
 ALTER TABLE `disponibilidadmesa`
-  MODIFY `idDisponibilidadMesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idDisponibilidadMesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `estadousuario`
 --
 ALTER TABLE `estadousuario`
-  MODIFY `idEstadoUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idEstadoUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `mesa`
@@ -269,7 +261,7 @@ ALTER TABLE `reserva`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `idRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idRoles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

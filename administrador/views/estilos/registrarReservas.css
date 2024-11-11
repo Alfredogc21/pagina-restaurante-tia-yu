@@ -1,6 +1,6 @@
-    .form-singup {
+.form-singup {
     width: 700px;
-    height: 670px;
+    height: 610px;
     background: #4e4d4d;
     margin: 20px auto 50px auto;
     box-shadow: 7px 13px 37px #000;
@@ -15,7 +15,7 @@
     gap: 10px;
     border-radius: 5px;
   }
-  
+
   .controls {
     width: 97%;
     flex: 1;
@@ -43,14 +43,30 @@
     color: #ffffff80; /* Gris claro inicialmente */
     font-weight: bold;
 }
-
 .controls2:focus,
 .controls2:valid {
     color: #ffffff; /* Cambia a blanco cuando se selecciona una opción válida */
 }
 
-  
-.buttons {
+.controls3 {
+  width: 97%;
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding: 11px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #252323;
+  color: #ffffff80; /* Gris claro inicialmente */
+  font-weight: bold;
+}
+.controls3:focus,
+.controls3:valid {
+    color: #ffffff; /* Cambia a blanco cuando se selecciona una opción válida */
+}
+
+  .buttons {
     width: 80%;
     height: 50px;
     font-size: 16px;

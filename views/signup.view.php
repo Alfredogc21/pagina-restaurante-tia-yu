@@ -45,18 +45,17 @@
 
         <form method="post" id="signup" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-singup">
             <h5>Registro</h5>
-            <input class="controls" type="number" name="cedula" value="" placeholder="Cedula" required>
+            <input class="controls" type="number" min="5"  name="cedula" value="" placeholder="Cedula" required >
             <div class="box">
-                <input class="controls" type="text" name="nombre1" placeholder="Primer Nombre" required>
-                <input class="controls" type="text" name="nombre2" placeholder="Segundo Nombre">
+                <input class="controls" type="text" minlength="3" name="nombres" placeholder="Nombres" required>
             </div>
             <div class="box">
-                <input class="controls" type="text" name="apellido1" placeholder="Primer Apellido" required>
-                <input class="controls" type="text" name="apellido2" placeholder="Segundo Apellido">
+                <input class="controls" type="text" minlength="4" name="apellidos" placeholder="Apellidos" required>
             </div>
             <input class="controls" type="number" name="telefono" placeholder="Telefono" require>
             <input class="controls" type="mail" name="correo" placeholder="Correo" require>
-            <input class="controls" type="password" name="password" placeholder="Contraseña" required>
+            <input class="controls" type="password" minlength="8" name="password" placeholder="Contraseña" required>
+            <input class="controls" type="password" minlength="8" name="passwordConfirm" placeholder="Confirmar Contraseña" required>
 
             <input class="buttons" type="submit" name="" value="Registrarse">
             <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
@@ -130,6 +129,7 @@
         </div>
     </footer>
 
+    <script src="views/js/signup.js"></script>
 </body>
 
 </html>

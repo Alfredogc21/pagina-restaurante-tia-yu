@@ -42,7 +42,6 @@
                 </nav>
     </header>
     <main>
-
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-login">
             <h5>Iniciar sesión</h5>
             <input class="controls" type="text" name="usuario" placeholder="Usuario" required>
@@ -51,7 +50,6 @@
             <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
             <p><a href="signup.php">Registrarse</a></p>
         </form>
-
     </main>
 
 

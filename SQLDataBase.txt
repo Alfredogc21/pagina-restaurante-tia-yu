@@ -30,7 +30,7 @@ CREATE TABLE usuarios (
     idUsuarios INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     cedula VARCHAR(20),
     nombres VARCHAR(60) NOT NULL,
-    apellido VARCHAR(60) NOT NULL,
+    apellidos VARCHAR(60) NOT NULL,
     idRoles INT(11), 
     idAccesos INT(11), 
     idDisponMesa INT(11),
