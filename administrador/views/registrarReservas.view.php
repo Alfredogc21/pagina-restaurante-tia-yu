@@ -23,7 +23,7 @@
           <a href="#"><i class="fas fa-calendar-alt"></i><span class="nav-text">Usuario</span><i class="fas fa-caret-down"></i></a>
           <ul class="submenu">
             <li><a href="registrarUsuarios.php">Registrar</a></li>
-            <li><a href="#">Consultar</a></li>
+            <li><a href="consultarUsuarios.php">Consultar</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -33,7 +33,7 @@
           <a href="#"><i class="fas fa-calendar-alt"></i><span class="nav-text">Reservas</span><i class="fas fa-caret-down"></i></a>
           <ul class="submenu">
             <li><a href="#">Ver Reservas</a></li>
-            <li><a href="#">Nueva Reserva</a></li>
+            <li><a href="registrarReservas.php">Nueva Reserva</a></li>
           </ul>
         </li>
         <li class="nav-item">

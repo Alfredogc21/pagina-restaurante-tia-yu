@@ -22,8 +22,8 @@
         <li class="nav-item has-submenu">
           <a href="#"><i class="fas fa-calendar-alt"></i><span class="nav-text">Usuario</span><i class="fas fa-caret-down"></i></a>
           <ul class="submenu">
-            <li><a href="#">Registrar</a></li>
-            <li><a href="#">Consultar</a></li>
+          <li><a href="registrarUsuarios.php">Registrar</a></li>
+            <li><a href="consultarUsuarios.php">Consultar</a></li>
           </ul>
         </li>
         <li class="nav-item">

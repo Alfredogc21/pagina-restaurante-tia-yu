@@ -1,0 +1,222 @@
+:root {
+    --boton-hover: crimson;
+    --tabla-hover: #fff0f0;
+}
+
+
+.card {
+    width: 90%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 1px 0px 46px 5px #ff000038;
+    padding: 20px;
+    margin: 30px auto 0 auto;
+}
+
+.titulo-icono {
+    display: flex;
+    align-items: center;
+}
+
+.titulo-icono h1 {
+    margin-right: 10px;
+    /* Espacio entre el texto y el icono */
+}
+
+.titulo-icono i {
+    font-size: 24px;
+    /* Tamaño del icono */
+}
+
+
+.filtros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.filtros label {
+    margin-right: 5px;
+}
+
+.filtros select,
+.filtros input {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.botonConsultar {
+    padding: 10px 20px;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botonConsultar:hover {
+    background-color: var(--boton-hover);
+}
+
+.tabla-responsive {
+    max-width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+thead {
+    background-color: var(--color-primario);
+    color: #fff;
+}
+
+th,
+td {
+    padding: 10px 3px;
+    text-align: center;
+    border-bottom: 1px solid var(--tabla-hover);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--color-fila-par);
+}
+
+tbody tr:hover {
+    background-color: var(--tabla-hover);
+}
+
+@media (max-width: 600px) {
+    .filtros {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Paginacion */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.paginacion a {
+    margin: 0 5px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: var(--color-primario);
+    color: white;
+    border-radius: 5px;
+}
+
+.paginacion a.activo {
+    background-color: #333;
+}
+
+/* Modal */
+
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 5% auto;
+    /* Centrado verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    /* Bordes redondeados */
+    width: 90%;
+    /* Ancho responsivo */
+    max-width: 600px;
+    /* Ancho máximo */
+}
+
+.cerrar {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    color: #000;
+    /* Color de la "X" */
+}
+
+label {
+    display: block;
+    /* Cada etiqueta en una nueva línea */
+    margin-bottom: 5px;
+    /* Espacio debajo de la etiqueta */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 95%;
+    /* Ancho completo */
+    padding: 10px;
+    /* Relleno */
+    margin-bottom: 15px;
+    /* Espacio entre campos */
+    border: 1px solid #ccc;
+    /* Borde suave */
+    border-radius: 5px;
+    /* Bordes redondeados */
+}
+
+.botonActualizar {
+    background-color: var(--color-primario);
+    /* Color de fondo del botón */
+    color: #fff;
+    /* Color del texto del botón */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    padding: 10px 15px;
+    /* Relleno */
+    cursor: pointer;
+    /* Cursor de puntero */
+}
+
+.botonActualizar:hover {
+    background-color: var(--boton-hover);
+    /* Color de fondo del botón al pasar el cursor */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .modal-contenido {
+        width: 95%;
+        /* Aumenta el ancho en pantallas pequeñas */
+        margin: 5% auto;
+        /* Menor margen en pantallas pequeñas */
+    }
+
+    .cerrar {
+        font-size: 24px;
+        /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    }
+}
