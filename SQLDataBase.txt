@@ -67,15 +67,33 @@ CREATE TABLE valoracion (
     FOREIGN KEY (idUsuarios) REFERENCES usuarios(idUsuarios)
 );
 
+CREATE TABLE `pqrs` (
+  `id_Pqrs` int(15) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `correo` varchar(50) NOT NULL,
+  `celular` varchar(11) NOT NULL,
+  `cod_tipopqrs` int(15) NOT NULL,
+  `mensaje` mediumtext NOT NULL,
+  `fecha` datetime NOT NULL,
+
+FOREIGN KEY (cod_tipopqrs) REFERENCES tipopqrs (codPqrs)
+);
+
+
+CREATE TABLE `tipopqrs` (
+  `codPqrs` int(15) NOT NULL,
+  `tipo` char(15) NOT NULL
+) ;
 
 
 
+-------insertar datos en tabla tipo PQRS---------
 
-
-
-
-
-
+INSERT INTO `tipopqrs` (`codPqrs`, `tipo`) VALUES
+(1, 'peticion'),
+(2, 'queja'),
+(3, 'reclamo'),
+(4, 'sugerencia');
 
 -------insertar datos en tabla roles---------
 INSERT INTO `roles` (`idRoles`, `roles`) VALUES (NULL, 'Administador'), (NULL, 'Empleado'), (NULL, 'Cliente');
