@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Restaurante</title>
+  <title>Registrar Usuarios</title>
   <link rel="stylesheet" href="views/estilos/dashboard.css">
+  <link rel="stylesheet" href="views/estilos/configurarCambioPassword.css">
   <link rel="shortcut icon" href="../views/iconos/logo_1.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -44,8 +45,8 @@
         <li class="nav-item has-submenu">
           <a href="#"><i class="fas fa-cogs"></i><span class="nav-text">Configuración</span></a>
           <ul class="submenu">
-          <li><a href="configurarCambioPassword.php">Cambiar Contraseña</a></li>
-          <li><a href="configurarCambioCorreo.php">Actualizar Correo</a></li>
+            <li><a href="configurarCambioPassword.php">Cambiar Contraseña</a></li>
+            <li><a href="configurarCambioCorreo.php">Actualizar Correo</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -64,16 +65,21 @@
       </header>
       <main class="content">
         <div class="welcome-card">
-          <h1>Bienvenidos</h1>
-          <p>¡Bienvenido a Las Delicias de la Tía Yú! Disfruta de nuestros almuerzos caseros preparados con amor, ingredientes frescos y un toque especial para ti. ❤️</p>
-          <div class="welcome-img">
-            <img src="../views/iconos/LASDELICIAS.png" class="lasDeliciasLogo" alt="Bienvenido">
-          </div>
+            <main>
+                <form method="post" id="signup" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-singup">
+                    <h5>Actualizar Correo</h5>
+                    <input class="controls" type="password" name="passwordNueva" id="passwordNueva" placeholder="Escribe la contraseña Nueva" required>
+                    <br></br>
+                    <input class="controls" type="password" name="passwordConfirmar" id="passwordConfirmar" placeholder="Confirmar Contraseña" required>
+                    <input class="buttons" type="submit" name="" value="Actualizar">
+                </form>
+            </main>
         </div>
       </main>
     </div>
   </div>
 
   <script src="views/js/dashboard.js"></script>
+  <script src="views/js/configurarCambioPassword.js"></script>
 </body>
 </html>

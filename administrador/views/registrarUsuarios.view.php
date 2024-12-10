@@ -42,8 +42,12 @@
         <li class="nav-item">
           <a href="#"><i class="fas fa-chart-line"></i><span class="nav-text">Estadísticas</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item has-submenu">
           <a href="#"><i class="fas fa-cogs"></i><span class="nav-text">Configuración</span></a>
+          <ul class="submenu">
+          <li><a href="configurarCambioPassword.php">Cambiar Contraseña</a></li>
+          <li><a href="configurarCambioCorreo.php">Actualizar Correo</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a href="#"><i class="fas fa-question-circle"></i><span class="nav-text">Ayuda</span></a>
@@ -64,14 +68,14 @@
             <main>
                 <form method="post" id="signup" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-singup">
                     <h5>Registro de Usuario</h5>
-                    <input class="controls" type="number" maxlength="11" name="cedula" value="" placeholder="Cedula" required>
+                    <input class="controls" type="number" min="1" name="cedula" value="" placeholder="Cedula" required>
                     <div class="box">
-                        <input class="controls" type="text" name="nombres" placeholder="Primer Nombre" required>
+                        <input class="controls" type="text" minlength="3" name="nombres" placeholder="Primer Nombre" required>
                     </div>
                     <div class="box">
-                        <input class="controls" type="text" name="apellidos" placeholder="Primer Apellido" required>
+                        <input class="controls" type="text" minlength="4" name="apellidos" placeholder="Primer Apellido" required>
                     </div>
-                    <input class="controls" type="number" maxlength="11" name="telefono" placeholder="Telefono" require>
+                    <input class="controls" type="number" min="0" name="telefono" placeholder="Telefono" require>
                     <input class="controls" type="mail" name="correo" placeholder="Correo" require>
                     <select class="controls2" id="rol" name="rol" required>
                       <option value="" disabled selected>Seleccione un rol</option>

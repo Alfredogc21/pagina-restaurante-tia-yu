@@ -42,8 +42,12 @@
         <li class="nav-item">
           <a href="#"><i class="fas fa-chart-line"></i><span class="nav-text">Estadísticas</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item has-submenu">
           <a href="#"><i class="fas fa-cogs"></i><span class="nav-text">Configuración</span></a>
+          <ul class="submenu">
+          <li><a href="configurarCambioPassword.php">Cambiar Contraseña</a></li>
+          <li><a href="configurarCambioCorreo.php">Actualizar Correo</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a href="#"><i class="fas fa-question-circle"></i><span class="nav-text">Ayuda</span></a>
@@ -74,7 +78,7 @@
                             </option>
                         <?php endforeach; ?>
                     </select>
-                    <input class="controls" type="number" name="numPersonas" id="clienteMesas" required>
+                    <input class="controls" type="number" name="numPersonas" min="1" max="10" id="clienteMesas" placeholder="Escribe el numero de personas" required>
                     <textarea class="controls" name="comentario" rows="4" cols="50" placeholder="Escribe tu comentario aquí..."></textarea>
 
                     <br></br>
