@@ -64,8 +64,11 @@
       </header>
       <main class="content">
         <div class="welcome-card">
-          <h1>Mensaje de bienvenida</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum itaque consequuntur, illum aliquam minus impedit eos nostrum porro excepturi! Qui repellendus exercitationem nisi unde esse autem asperiores vitae nihil ipsam?🌍</p>
+          <h1>Bienvenidos</h1>
+          <p>¡Bienvenido a Las Delicias de la Tía Yú! Disfruta de nuestros almuerzos caseros preparados con amor, ingredientes frescos y un toque especial para ti. ❤️</p>
+          <div class="welcome-img">
+            <img src="../views/iconos/LASDELICIAS.png" class="lasDeliciasLogo" alt="Bienvenido">
+          </div>
         </div>
       </main>
     </div>

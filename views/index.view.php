@@ -8,7 +8,8 @@
     <title>Restaurante las Delicias de la Tía Yú</title>
     <link rel="shortcut icon" href="views/iconos/logo_1.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/9836403ffa.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="views/Estilos/style.css">
+    <link rel="stylesheet" href="views/Estilos/style.css?1">
+
 </head>
 
 <body>
@@ -30,13 +31,27 @@
                         <li><a href="#" id="selected"></a></li>
                         <li><a href="#">Menú del Día</a>
                             <ul>
-                                <li><a href="https://www.canva.com/design/DAFPTGywLg8/iOpE1tSZ5Fp_LM92YrA2dQ/view?utm_content=DAFPTGywLg8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Lunes</a></li>
-                                <li><a href="https://www.canva.com/design/DAFUiUUijZs/pnTKetnsYb2wdtT-GA4szQ/view?utm_content=DAFUiUUijZs&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Martes</a></li>
-                                <li><a href="https://www.canva.com/design/DAFUiYNg1GQ/Sj7Q39lXj1YpFCDuOnA9aw/view?utm_content=DAFUiYNg1GQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Miércoles</a></li>
-                                <li><a href="https://www.canva.com/design/DAFUiYNg1GQ/Sj7Q39lXj1YpFCDuOnA9aw/view?utm_content=DAFUiYNg1GQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Jueves</a></li>
-                                <li><a href="https://www.canva.com/design/DAFUiYNg1GQ/Sj7Q39lXj1YpFCDuOnA9aw/view?utm_content=DAFUiYNg1GQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Viernes</a></li>
-                                <li><a href="https://www.canva.com/design/DAFUieuJFuM/fEJF48EkLj2azOMYHXqFHA/view?utm_content=DAFUieuJFuM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Sábado</a></li>
-                                <li><a href="https://www.canva.com/design/DAFPWapWUFU/M7JfHxp04tN98jfsiyh_pA/view?utm_content=DAFPWapWUFU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Domingo</a></li>
+                                <li><a
+                                        href="https://www.canva.com/design/DAFPTGywLg8/iOpE1tSZ5Fp_LM92YrA2dQ/view?utm_content=DAFPTGywLg8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Lunes</a>
+                                </li>
+                                <li><a
+                                        href="https://www.canva.com/design/DAFUiUUijZs/pnTKetnsYb2wdtT-GA4szQ/view?utm_content=DAFUiUUijZs&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Martes</a>
+                                </li>
+                                <li><a
+                                        href="https://www.canva.com/design/DAFUiYNg1GQ/Sj7Q39lXj1YpFCDuOnA9aw/view?utm_content=DAFUiYNg1GQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Miércoles</a>
+                                </li>
+                                <li><a
+                                        href="https://www.canva.com/design/DAFUiYNg1GQ/Sj7Q39lXj1YpFCDuOnA9aw/view?utm_content=DAFUiYNg1GQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Jueves</a>
+                                </li>
+                                <li><a
+                                        href="https://www.canva.com/design/DAFUiYNg1GQ/Sj7Q39lXj1YpFCDuOnA9aw/view?utm_content=DAFUiYNg1GQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Viernes</a>
+                                </li>
+                                <li><a
+                                        href="https://www.canva.com/design/DAFUieuJFuM/fEJF48EkLj2azOMYHXqFHA/view?utm_content=DAFUieuJFuM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Sábado</a>
+                                </li>
+                                <li><a
+                                        href="https://www.canva.com/design/DAFPWapWUFU/M7JfHxp04tN98jfsiyh_pA/view?utm_content=DAFPWapWUFU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Domingo</a>
+                                </li>
                             </ul>
                         </li>
                         <li><a href="#novedades">Novedades</a></li>
@@ -68,14 +83,21 @@
                 <p><img src="views/platos/rest.jpg" alt=""></p>
                 <p>El Restaurante las Delicias de la Tía Yú lleva 8 años ofreciendo el servicio de almuerzos caseros
                     servidos a la mesa y para llevar. Pensado como un negocio familiar, se inició ofreciendo el servicio
-                    solo los fines de semana y para temporada de fiestas, pero por petición de nuestros clientes se decidió
-                    abrir de domingo a domingo, ofreciendo un menú variado con el fin de satisfacer el gusto de ellos. </p>
-                <p>En nuestro restaurante se preparan los alimentos de forma casera, libre de condimentos, sazonados solo
-                    con especias naturales, acompañados del toque especial de nuestra chef que es una mujer apasionada por
+                    solo los fines de semana y para temporada de fiestas, pero por petición de nuestros clientes se
+                    decidió
+                    abrir de domingo a domingo, ofreciendo un menú variado con el fin de satisfacer el gusto de ellos.
+                </p>
+                <p>En nuestro restaurante se preparan los alimentos de forma casera, libre de condimentos, sazonados
+                    solo
+                    con especias naturales, acompañados del toque especial de nuestra chef que es una mujer apasionada
+                    por
                     la gastronomía, quien le pone amor a cada alimento que prepara. </p>
-                <p>Trabajamos con ingredientes frescos, toda nuestra materia prima es comprada a diario con el fin de asegurar
-                    la calidad de los productos servidos. Las recetas y preparaciones se realizan todos los días en nuestra cocina. Los cortes y procesos se hacen
-                    de manera artesanal por nuestro equipo de trabajo, el cual está conformado por miembros de nuestra familia, aunque algunos días de la semana
+                <p>Trabajamos con ingredientes frescos, toda nuestra materia prima es comprada a diario con el fin de
+                    asegurar
+                    la calidad de los productos servidos. Las recetas y preparaciones se realizan todos los días en
+                    nuestra cocina. Los cortes y procesos se hacen
+                    de manera artesanal por nuestro equipo de trabajo, el cual está conformado por miembros de nuestra
+                    familia, aunque algunos días de la semana
                     se emplean a otras personas con el fin de ofrecer una buena atención a nuestros clientes.</p>
 
             </div>
@@ -90,8 +112,10 @@
                 <div class="columna10">
                     <h2>Dirección</h2>
                     <p>Manzana B casa 28 Barrio El Futuro, Espinal-Tolima.</p><br>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.6951959516186!2d-74.88263894232787!3d4.1433796359128126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3ed3dc40c7c581%3A0x6cae3e4323a252b1!2sRestaurante%20La%20Tia%20Yu!5e0!3m2!1ses-419!2sco!4v1669605733710!5m2!1ses-419!2sco"
-                        width="300" height="150" style="border: 3px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.6951959516186!2d-74.88263894232787!3d4.1433796359128126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3ed3dc40c7c581%3A0x6cae3e4323a252b1!2sRestaurante%20La%20Tia%20Yu!5e0!3m2!1ses-419!2sco!4v1669605733710!5m2!1ses-419!2sco"
+                        width="300" height="150" style="border: 3px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h2>Contactos</h2>
                     <p>Celular: 3178338178</p>
                     <p>Whatsapp: 3214172645</p>
@@ -102,14 +126,29 @@
 
                 <div class="columna11">
                     <h2>Buzón de Sugerencias</h2>
-                    <form method="post" action="Comentario.php">
-                        <input class="control" type="text" placeholder="Nombre Completo" name="Nombre_cliente" required>
-                        <input class="control" type="email" placeholder="Correo Electronico" name="Correo_electronico" required>
-                        <input class="control" type="tel" placeholder="Telefono" name="Telefono" required>
-                        <input class="control" type=" hidden" name="Comentario" placeholder="Comentarios o Sugerencias">
+                    <form method="post" action="pqrs.php" class="form_input">
+
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form_f" required><br>
+
+                        <input type="email" name="correo" id="correo" placeholder="Correo" class="form_f" required><br>
+
+                        <input type="number" name="celular" id="celular" placeholder="celular" class="form_f" required><br>
+
+                        <label for="tipo">Tipo de solicitud:</label><br>
+                        <select name="tipo" id="tipo" class="form_f" required>
+                            <option value=" ">Seleccionar...</option>
+                            <option value="1">Petición</option>
+                            <option value="2">Queja</option>
+                            <option value="3">Reclamo</option>
+                            <option value="4">Sugerencia</option>
+                        </select><br>
+
+                        <textarea name="mensaje" id="mensaje" placeholder="Escribir Mensaje" class="form_area" required></textarea><br>
+
                         <button>ENVIAR</button>
                     </form>
-                    <p>Envíe sus comentarios a nuestro buzón de sugerencias. En las Delicias de la Tía Yú trabajamos día a día para brindarle un mejor servicio. </p><br>
+                    <p>Envíe sus comentarios a nuestro buzón de sugerencias. En las Delicias de la Tía Yú trabajamos día
+                        a día para brindarle un mejor servicio. </p>
                     <p>¡Agradecemos sus sugerencias!</p>
                 </div>
             </div>
@@ -143,19 +182,22 @@
                 <div class="card">
                     <img src="views/platos/muchacho.jpg">
                     <h2>Muchacho Relleno</h2>
-                    <p>Para el próximo 24 y 31 de diciembre ofrecemos el delicioso plato frío, consta de: Dos rebanadas de muchacho relleno, acompañado de arroz y ensalada de papa. </p>
+                    <p>Para el próximo 24 y 31 de diciembre ofrecemos el delicioso plato frío, consta de: Dos rebanadas
+                        de muchacho relleno, acompañado de arroz y ensalada de papa. </p>
                     <h3>$15000</h3>
                 </div>
                 <div class="card">
                     <img src="views/platos/dulce.jpg">
                     <h2>Dulce Nochebuena</h2>
-                    <p>Para el próximo 24 y 31 de diciembre ofrecemos el delicioso dulce de papaya verde, limón y breva; acompañado de bizcochos y queso. (contenedor 16onz)</p><br>
+                    <p>Para el próximo 24 y 31 de diciembre ofrecemos el delicioso dulce de papaya verde, limón y breva;
+                        acompañado de bizcochos y queso. (contenedor 16onz)</p><br>
                     <h3>$15000</h3>
                 </div>
                 <div class="card">
                     <img src="views/platos/postres.jpg">
                     <h2>Postres</h2>
-                    <p>Todos los sábados ofrecemos postres. Cada fin de semana se ofrece un sabor diferente como: Maracuyá, Limón, Gelatina de Colores, etc...(contenedor 16onz)</p><br>
+                    <p>Todos los sábados ofrecemos postres. Cada fin de semana se ofrece un sabor diferente como:
+                        Maracuyá, Limón, Gelatina de Colores, etc...(contenedor 16onz)</p><br>
                     <h3>$6000</h3>
                 </div>
             </div>
@@ -240,7 +282,7 @@
         <div class="container_footer_all">
             <div class="container_body">
                 <div class="columna">
-                    <img src="views/iconos/LAS DELICIAS.png">
+                    <img src="views/iconos/LASDELICIAS.png">
 
                     <h2>Horario de Atención</h2>
                     <p>Lunes a Viernes</p>
@@ -259,7 +301,8 @@
                         </a>
                     </div>
                     <div class=row2>
-                        <a href="https://api.whatsapp.com/send?phone=573214172645&text=¿Cuál es el Menú para el Día de Hoy?" target="_blank">
+                        <a href="https://api.whatsapp.com/send?phone=573214172645&text=¿Cuál es el Menú para el Día de Hoy?"
+                            target="_blank">
                             <img src="views/iconos/whatsapp30.png" href="">
                             <label>3214172645</label>
                         </a>

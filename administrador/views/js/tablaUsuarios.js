@@ -1,22 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Obtener los parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Asignar valores a los campos de filtro desde los parámetros de la URL
+    const filtroEstado = urlParams.get('filtro-estado');
+    const filtroRol = urlParams.get('filtro-rol');
+    const filtroFecha = urlParams.get('filtro-fechaRegistro');
+    const filtroCedula = urlParams.get('filtro-cedula');
+
+    const estadoInput = document.getElementById('filtro-estado');
+    const rolInput = document.getElementById('filtro-rol');
+    const fechaInput = document.getElementById('filtro-fechaRegistro');
+    const cedulaInput = document.getElementById('filtro-cedula');
+
+    if (estadoInput && filtroEstado) estadoInput.value = filtroEstado;
+    if (rolInput && filtroRol) rolInput.value = filtroRol;
+    if (fechaInput && filtroFecha) fechaInput.value = filtroFecha;
+    if (cedulaInput && filtroCedula) cedulaInput.value = filtroCedula;
+
+    // Configuración del modal de edición
     const modal = document.getElementById('modalEditar');
     const cerrarBtn = document.querySelector('.cerrar');
     const editarBtns = document.querySelectorAll('.editar-btn');
 
+    // Mostrar el modal con datos cargados
     editarBtns.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
             const idUsuario = e.currentTarget.dataset.id;
 
-            console.log('Editar usuario con id:', idUsuario);
-
             try {
-                // Realizar una petición AJAX para obtener los datos del usuario usando su id
                 const response = await fetch(`consultarUsuarios.php?id=${idUsuario}`);
                 if (!response.ok) throw new Error('Error al obtener datos del usuario');
 
                 const data = await response.json();
-
-                // Verificar si los datos existen antes de rellenar el formulario
                 if (data) {
                     const idInput = document.getElementById('id-editar');
                     const cedulaInput = document.getElementById('cedula-editar');
@@ -26,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const rolInput = document.getElementById('idRoles-editar');
                     const estadoInput = document.getElementById('estado-editar');
 
-                    // Asignar valores a los inputs del formulario
                     if (idInput) idInput.value = data.id;
                     if (cedulaInput) cedulaInput.value = data.cedula;
                     if (nombresInput) nombresInput.value = data.nombres;
@@ -38,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error('No se encontraron datos para el usuario.');
                 }
 
-                // Mostrar el modal
                 modal.style.display = 'block';
             } catch (error) {
                 console.error('Error:', error);
@@ -46,12 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cerrar el modal al hacer clic en el botón de cerrar
+    // Cerrar modal al hacer clic en el botón de cerrar
     cerrarBtn.addEventListener('click', () => {
         modal.style.display = 'none';
     });
 
-    // Cerrar el modal si se hace clic fuera de él
+    // Cerrar modal al hacer clic fuera del mismo
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';

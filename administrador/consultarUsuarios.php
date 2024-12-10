@@ -17,14 +17,14 @@ if (isset($_SESSION['usuarios'])) {
     $consultarROl->execute(array(':correo' => $correo));
     $resultadoConsulta = $consultarROl->fetch();
 
-    //Nombre y apellido del usuario
+    // Nombre y apellido del usuario
     $nombreUsuario = $resultadoConsulta['nombres'] . ' ' . $resultadoConsulta['apellidos'];
 
     // Obtener filtros desde el formulario
+    $cedula = isset($_POST['filtro-cedula']) ? $_POST['filtro-cedula'] : '';
     $estado = isset($_POST['filtro-estado']) ? $_POST['filtro-estado'] : '';
     $rol = isset($_POST['filtro-rol']) ? $_POST['filtro-rol'] : '';
     $fecha = isset($_POST['filtro-fechaRegistro']) ? $_POST['filtro-fechaRegistro'] : '';
-    $cedula = isset($_POST['filtro-cedula']) ? $_POST['filtro-cedula'] : '';
 
     // Consulta base con filtros dinámicos
     $sql = "SELECT usuarios.idUsuarios AS id,
@@ -127,22 +127,8 @@ if (isset($_SESSION['usuarios'])) {
     if (isset($_GET['id'])) {
         $idUsuario = $_GET['id'];
         $consultaUsuario = $conexion->prepare(
-            'SELECT 
-                usuarios.idUsuarios AS id, 
-                usuarios.cedula AS cedula, 
-                usuarios.nombres AS nombres, 
-                usuarios.apellidos AS apellidos, 
-                usuarios.correoElectronico AS correoElectronico, 
-                roles.roles AS rol, 
-                estadoUsuario.estado AS estado 
-            FROM 
-                usuarios 
-            INNER JOIN 
-                roles ON usuarios.idRoles = roles.idRoles 
-            INNER JOIN 
-                estadoUsuario ON usuarios.idEstadoUsuario = estadoUsuario.idEstadoUsuario 
-            WHERE 
-                usuarios.idUsuarios = :id'
+            'SELECT usuarios.idUsuarios AS id, usuarios.cedula AS cedula, usuarios.nombres AS nombres, usuarios.apellidos AS apellidos, usuarios.correoElectronico AS correoElectronico, roles.roles AS rol, estadoUsuario.estado AS estado 
+            FROM usuarios INNER JOIN roles ON usuarios.idRoles = roles.idRoles INNER JOIN estadoUsuario ON usuarios.idEstadoUsuario = estadoUsuario.idEstadoUsuario WHERE usuarios.idUsuarios = :id'
         );
         $consultaUsuario->execute([':id' => $idUsuario]);
         $usuarioEditar = $consultaUsuario->fetch(PDO::FETCH_ASSOC);
@@ -158,60 +144,35 @@ if (isset($_SESSION['usuarios'])) {
         exit();
     }
 
+    // Procesar actualización de usuario
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['id'])) {
         $idActualizar = $_POST['id'];
-        $cedulaActualizar = $_POST['cedula'];
-        $nombresActualizar = $_POST['nombres'];
-        $apellidosActualizar = $_POST['apellidos'];
-        $correoActualizar = $_POST['correoElectronico'];
-        $rolActualizar = $_POST['rol'];
-        $estadoActualizar = $_POST['estado'];
+        $cedula = $_POST['cedula'];
+        $nombres = $_POST['nombres'];
+        $apellidos = $_POST['apellidos'];
+        $correo = $_POST['correo'];
+        $rol = $_POST['rol'];
+        $estado = $_POST['estado'];
 
-        //Limpieza y validacion de datos
-        $idActualizar = intval($_POST['id']);
-        $cedulaActualizar = htmlspecialchars(trim($cedulaActualizar));
-        $nombresActualizar = htmlspecialchars(trim($nombresActualizar));
-        $apellidosActualizar = htmlspecialchars((trim($apellidosActualizar)));
-        $correoActualizar = filter_var($correoActualizar, FILTER_SANITIZE_EMAIL);
-        $estadoActualizar = intval($estadoActualizar);
-        $rolActualizar = intval($rolActualizar);
+        $actualizarUsuario = $conexion->prepare('UPDATE usuarios SET cedula = :cedula, nombres = :nombres, apellidos = :apellidos, idRoles = :rol, idEstadoUsuario = :estado, correoElectronico = :correo WHERE idUsuarios = :id');
+        $resultado = $actualizarUsuario->execute(array(
+            ':id' => $idActualizar,
+            ':cedula' => $cedula,
+            ':nombres' => $nombres,
+            ':apellidos' => $apellidos,
+            ':rol' => $rol,
+            ':estado' => $estado,
+            ':correo' => $correo
+        ));
 
-
-        // Validar que todos los campos requeridos están presentes antes de ejecutar la consulta
-        if (!empty($idActualizar) && !empty($cedulaActualizar) && !empty($nombresActualizar) && !empty($apellidosActualizar) && !empty($correoActualizar) && !empty($rolActualizar) && !empty($estadoActualizar)) {
-            $actualizarUsuario = $conexion->prepare(
-                'UPDATE usuarios 
-                SET 
-                    cedula = :cedula, 
-                    nombres = :nombres, 
-                    apellidos = :apellidos, 
-                    correoElectronico = :correo, 
-                    idRoles = :rol, 
-                    idEstadoUsuario = :estado 
-                WHERE 
-                    idUsuarios = :id'
-            );
-
-            $resultado = $actualizarUsuario->execute(array(
-                'id' => $idActualizar,
-                ':cedula' => $cedulaActualizar,
-                ':nombres' => $nombresActualizar,
-                ':apellidos' => $apellidosActualizar,
-                ':correo' => $correoActualizar,
-                ':rol' => $rolActualizar,
-                ':estado' => $estadoActualizar
-            ));
-
-            if ($resultado) {
-                echo "<script>alert('Usuario actualizado correctamente');</script>";
-            } else {
-                $errorInfo = $actualizarUsuario->errorInfo();
-                echo "<script>alert('Error: No se pudo actualizar el usuario. " . $errorInfo[2] . "');</script>";
-            }
+        if ($resultado) {
+            echo "<script>alert('Usuario actualizado correctamente');</script>";
+            header('Location: consultarUsuarios.php');
         } else {
-            echo "<script>alert('Error: Todos los campos son requeridos');</script>";
+            echo "<script>alert('Error: No se pudo actualizar el usuario.');</script>";
         }
     }
+
 
     if ($resultadoConsulta['idRoles'] == 1) {
         require 'views/consultarUsuarios.view.php';
