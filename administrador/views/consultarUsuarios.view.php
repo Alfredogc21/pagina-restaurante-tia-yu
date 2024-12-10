@@ -149,26 +149,20 @@
             <span class="cerrar">&times;</span>
             <h2>Editar Usuario</h2>
             <form id="formularioEditar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="actualizar">
-              <!-- Campo oculto para el ID -->
               <input type="hidden" id="id-editar" name="id">
 
-              <!-- Cédula -->
               <label for="cedula-editar">Cédula:</label>
               <input type="number" id="cedula-editar" name="cedula" required>
 
-              <!-- Nombres -->
               <label for="nombres-editar">Nombres:</label>
               <input type="text" id="nombres-editar" name="nombres" required>
 
-              <!-- Apellidos -->
               <label for="apellidos-editar">Apellidos:</label>
               <input type="text" id="apellidos-editar" name="apellidos" required>
 
-              <!-- Correo Electrónico -->
               <label for="correo-editar">Correo Electrónico:</label>
-              <input type="email" id="correo-editar" name="correoElectronico" required>
+              <input type="email" id="correo-editar" name="correo" required>
 
-              <!-- Rol -->
               <label for="idRoles-editar">Rol:</label>
               <select id="idRoles-editar" name="rol" required>
                 <option disabled selected>Seleccione el rol</option>
@@ -177,7 +171,6 @@
                 <option value="3">Cliente</option>
               </select>
 
-              <!-- Estado -->
               <label for="estado-editar">Estado:</label>
               <select id="estado-editar" name="estado" required>
                 <option disabled selected>Seleccione el estado</option>
@@ -186,33 +179,31 @@
                 <option value="3">Desactivado</option>
               </select>
 
-              <!-- Botón de enviar -->
               <button class="botonActualizar" type="submit">Guardar cambios</button>
             </form>
+
+            <?php if (!empty($errores)): ?>
+              <div class="alert">
+                <?php echo $errores; ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if (!empty($success)): ?>
+              <div class="exitoso">
+                <?php echo $success; ?>
+              </div>
+            <?php endif; ?>
           </div>
         </div>
 
     </div>
-  </div>
 
-
-  <?php if (!empty($errores)): ?>
-    <div class="alert">
-      <?php echo $errores; ?>
-    </div>
-  <?php endif; ?>
-  </div>
-  </div>
-
-  </div>
-  </main>
-
-
-
+    </main>
   </div>
   </div>
 
   <script src="views/js/dashboard.js"></script>
+  <script src="views/js/tablaUsuarios.js"></script>
 </body>
 
 </html>

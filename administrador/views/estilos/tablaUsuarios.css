@@ -20,12 +20,10 @@
 
 .titulo-icono h1 {
     margin-right: 10px;
-    /* Espacio entre el texto y el icono */
 }
 
 .titulo-icono i {
     font-size: 24px;
-    /* Tamaño del icono */
 }
 
 
@@ -128,10 +126,8 @@ tbody tr:hover {
 }
 
 /* Modal */
-
 .modal {
     display: none;
-    /* Oculto por defecto */
     position: fixed;
     left: 0;
     top: 0;
@@ -144,15 +140,11 @@ tbody tr:hover {
 .modal-contenido {
     background-color: #fefefe;
     margin: 5% auto;
-    /* Centrado verticalmente */
     padding: 20px;
     border: 1px solid #888;
     border-radius: 8px;
-    /* Bordes redondeados */
     width: 90%;
-    /* Ancho responsivo */
     max-width: 600px;
-    /* Ancho máximo */
 }
 
 .cerrar {
@@ -160,14 +152,11 @@ tbody tr:hover {
     font-size: 28px;
     cursor: pointer;
     color: #000;
-    /* Color de la "X" */
 }
 
 label {
     display: block;
-    /* Cada etiqueta en una nueva línea */
     margin-bottom: 5px;
-    /* Espacio debajo de la etiqueta */
 }
 
 input[type="text"],
@@ -175,48 +164,33 @@ input[type="email"],
 input[type="number"],
 select {
     width: 95%;
-    /* Ancho completo */
     padding: 10px;
-    /* Relleno */
     margin-bottom: 15px;
-    /* Espacio entre campos */
     border: 1px solid #ccc;
-    /* Borde suave */
     border-radius: 5px;
-    /* Bordes redondeados */
 }
 
 .botonActualizar {
     background-color: var(--color-primario);
-    /* Color de fondo del botón */
     color: #fff;
-    /* Color del texto del botón */
     border: none;
-    /* Sin borde */
     border-radius: 5px;
-    /* Bordes redondeados */
     padding: 10px 15px;
-    /* Relleno */
     cursor: pointer;
-    /* Cursor de puntero */
 }
 
 .botonActualizar:hover {
     background-color: var(--boton-hover);
-    /* Color de fondo del botón al pasar el cursor */
 }
 
 /* Responsive styles */
 @media (max-width: 600px) {
     .modal-contenido {
         width: 95%;
-        /* Aumenta el ancho en pantallas pequeñas */
         margin: 5% auto;
-        /* Menor margen en pantallas pequeñas */
     }
 
     .cerrar {
         font-size: 24px;
-        /* Tamaño de fuente más pequeño en pantallas pequeñas */
     }
 }
