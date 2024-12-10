@@ -67,23 +67,23 @@ CREATE TABLE valoracion (
     FOREIGN KEY (idUsuarios) REFERENCES usuarios(idUsuarios)
 );
 
-CREATE TABLE `pqrs` (
-  `id_Pqrs` int(15) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `correo` varchar(50) NOT NULL,
-  `celular` varchar(11) NOT NULL,
-  `cod_tipopqrs` int(15) NOT NULL,
-  `mensaje` mediumtext NOT NULL,
-  `fecha` datetime NOT NULL,
+CREATE TABLE tipopqrs (
+  codPqrs int(15) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  tipo char(15) NOT NULL
+);
 
-FOREIGN KEY (cod_tipopqrs) REFERENCES tipopqrs (codPqrs)
+CREATE TABLE pqrs (
+  id_Pqrs int(15) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  nombre varchar(50) NOT NULL,
+  correo varchar(50) NOT NULL,
+  celular varchar(11) NOT NULL,
+  cod_tipopqrs int(15) NOT NULL,
+  mensaje mediumtext NOT NULL,
+  fecha datetime NOT NULL,
+  FOREIGN KEY (cod_tipopqrs) REFERENCES tipopqrs (codPqrs)
 );
 
 
-CREATE TABLE `tipopqrs` (
-  `codPqrs` int(15) NOT NULL,
-  `tipo` char(15) NOT NULL
-) ;
 
 
 

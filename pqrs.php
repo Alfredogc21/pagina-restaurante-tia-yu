@@ -5,11 +5,11 @@ require 'conexion/conexion.php';
 // Procesar el formulario solo si se ha enviado una solicitud POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitizar y validar los datos del formulario
-    $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
+    $nombre = filter_input(INPUT_POST, 'nombre');
     $correo = filter_input(INPUT_POST, 'correo', FILTER_VALIDATE_EMAIL);
     $celular = filter_input(INPUT_POST, 'celular', FILTER_SANITIZE_NUMBER_INT);
     $tipo = filter_input(INPUT_POST, 'tipo', FILTER_SANITIZE_NUMBER_INT);
-    $mensaje = filter_input(INPUT_POST, 'mensaje', FILTER_SANITIZE_STRING);
+    $mensaje = filter_input(INPUT_POST, 'mensaje');
 
     // Verificar campos obligatorios
     if (!$nombre || !$correo || !$celular || !$tipo || !$mensaje) {
@@ -49,4 +49,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Refresh: 1; url=index.php");
     }
 }
-?>
