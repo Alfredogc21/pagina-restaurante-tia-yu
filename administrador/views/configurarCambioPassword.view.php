@@ -67,7 +67,7 @@
         <div class="welcome-card">
             <main>
                 <form method="post" id="signup" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-singup">
-                    <h5>Actualizar Correo</h5>
+                    <h5>Actualizar contraseña</h5>
                     <input class="controls" type="password" name="passwordNueva" id="passwordNueva" placeholder="Escribe la contraseña Nueva" required>
                     <br></br>
                     <input class="controls" type="password" name="passwordConfirmar" id="passwordConfirmar" placeholder="Confirmar Contraseña" required>
