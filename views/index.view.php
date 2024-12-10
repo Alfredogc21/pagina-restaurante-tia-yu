@@ -282,7 +282,7 @@
         <div class="container_footer_all">
             <div class="container_body">
                 <div class="columna">
-                    <img src="views/iconos/LAS DELICIAS.png">
+                    <img src="views/iconos/LASDELICIAS.png">
 
                     <h2>Horario de Atención</h2>
                     <p>Lunes a Viernes</p>
