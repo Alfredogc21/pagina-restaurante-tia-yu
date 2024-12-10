@@ -16,7 +16,7 @@
     <header>
         <div class="header__superior">
             <div class="logo">
-                <img src="views/iconos/LAS DELICIAS.png" alt="">
+                <img src="views/iconos/LASDELICIAS.png" alt="">
             </div>
         </div>
 
