@@ -32,25 +32,25 @@
                         <li><a href="#">Menú del Día</a>
                             <ul>
                                 <li><a
-                                        href="https://www.canva.com/design/DAFPTGywLg8/iOpE1tSZ5Fp_LM92YrA2dQ/view?utm_content=DAFPTGywLg8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Lunes</a>
+                                        href="https://www.canva.com/design/DAGYtA-HrN4/v-KlWARExuotJ5CG9ifZmQ/edit?utm_content=DAGYtA-HrN4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Lunes</a>
                                 </li>
                                 <li><a
-                                        href="https://www.canva.com/design/DAFUiUUijZs/pnTKetnsYb2wdtT-GA4szQ/view?utm_content=DAFUiUUijZs&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Martes</a>
+                                        href="https://www.canva.com/design/DAGYtSoD5OY/60U0UTIQYXdI0fc1VTuA-A/edit?utm_content=DAGYtSoD5OY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Martes</a>
                                 </li>
                                 <li><a
-                                        href="https://www.canva.com/design/DAFUiYNg1GQ/Sj7Q39lXj1YpFCDuOnA9aw/view?utm_content=DAFUiYNg1GQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Miércoles</a>
+                                        href="https://www.canva.com/design/DAGYtQtqmOk/oSTuWiUsz4kNlLqSBwt_Qg/edit?utm_content=DAGYtQtqmOk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Miércoles</a>
                                 </li>
                                 <li><a
-                                        href="https://www.canva.com/design/DAFUiYNg1GQ/Sj7Q39lXj1YpFCDuOnA9aw/view?utm_content=DAFUiYNg1GQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Jueves</a>
+                                        href="https://www.canva.com/design/DAGYteXaxQs/kuuhX1gBESoqSra8EWHm9w/edit?utm_content=DAGYteXaxQs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Jueves</a>
                                 </li>
                                 <li><a
-                                        href="https://www.canva.com/design/DAFUiYNg1GQ/Sj7Q39lXj1YpFCDuOnA9aw/view?utm_content=DAFUiYNg1GQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Viernes</a>
+                                        href="https://www.canva.com/design/DAGYtXkqFPk/vPXzzlaAq_rey8y85zqiWw/edit?utm_content=DAGYtXkqFPk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Viernes</a>
                                 </li>
                                 <li><a
-                                        href="https://www.canva.com/design/DAFUieuJFuM/fEJF48EkLj2azOMYHXqFHA/view?utm_content=DAFUieuJFuM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Sábado</a>
+                                        href="https://www.canva.com/design/DAGYtabUNnY/7SjGUCtiN2ikoqJoN4N1LQ/edit?utm_content=DAGYtabUNnY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Sábado</a>
                                 </li>
                                 <li><a
-                                        href="https://www.canva.com/design/DAFPWapWUFU/M7JfHxp04tN98jfsiyh_pA/view?utm_content=DAFPWapWUFU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">Domingo</a>
+                                        href="https://www.canva.com/design/DAGYtEeox30/UDVV24jNNPmbWuJG2nvjNw/edit?utm_content=DAGYtEeox30&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Domingo</a>
                                 </li>
                             </ul>
                         </li>
