@@ -111,7 +111,7 @@
             <div class="c1011">
                 <div class="columna10">
                     <h2>Dirección</h2>
-                    <p>Manzana B casa 28 Barrio El Futuro, Espinal-Tolima.</p><br>
+                    <p>carrera 11 # 7-84, Espinal-Tolima.</p><br>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.6951959516186!2d-74.88263894232787!3d4.1433796359128126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3ed3dc40c7c581%3A0x6cae3e4323a252b1!2sRestaurante%20La%20Tia%20Yu!5e0!3m2!1ses-419!2sco!4v1669605733710!5m2!1ses-419!2sco"
                         width="300" height="150" style="border: 3px;" allowfullscreen="" loading="lazy"
